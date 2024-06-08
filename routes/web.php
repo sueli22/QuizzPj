@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,5 +35,12 @@ Route::post('/category/store',[CategoryController::class,'store'])->name('store.
 Route::delete('/category/delete/{id}',[CategoryController::class,'delete'])->name('delete.category');
 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('edit.category');
 Route::put('category/update/{id}',[CategoryController::class,'update'])->name('update.category');
+
+//Question
+
+Route::get('/question',[QuestionController::class,'index'])->name('questions');
+Route::get('/question/add',[QuestionController::class,'add'])->name('add.question');
+Route::post('question/store',[QuestionController::class,'store'])->name('store.question');
+
 
 

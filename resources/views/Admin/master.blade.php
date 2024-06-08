@@ -113,9 +113,9 @@
 
 
                 <li class="nav-item }">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('questions')}}">
                         <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Qusetion& answer</span>
+                        <span>Qusetion</span>
                     </a>
                 </li>
 
