@@ -33,7 +33,7 @@
       <div class="row mt-5 align-item-center"  data-aos="fade-up"  data-aos-anchor-placement="top-center"  data-aos-duration="1000" data-aos-delay="400" data-aos-offset="50">
            <div class="col-md-12 col-12 mt-5 " style="font-family: 'Freckle Face', cursive; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
             <h1 class="mt-5 " >Let <span style="color:rgb(125, 245, 245); ">Answer Quizz </span></h1>
-            <h1 class="text-right  fst-italic" style="color:rgb(209, 243, 14);">Together</h1>
+            <h1 class="text-right  fst-italic" style="color:rgb(209, 243, 14);">Nwk</h1>
           </div>
 
       </div>
