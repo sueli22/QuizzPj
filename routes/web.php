@@ -41,6 +41,6 @@ Route::put('category/update/{id}',[CategoryController::class,'update'])->name('u
 Route::get('/question',[QuestionController::class,'index'])->name('questions');
 Route::get('/question/add',[QuestionController::class,'add'])->name('add.question');
 Route::post('question/store',[QuestionController::class,'store'])->name('store.question');
-
+Route::delete('question/delete,{id}',[QuestionController::class,'delete'])->name('delete.question');
 
 

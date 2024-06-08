@@ -12,7 +12,7 @@ class QuestionController extends Controller
     //index
     public function index(){
 
-        $questions = Question::all();
+        $questions = Question::with('category')->get();
 
         return view('admin.question.index', compact('questions'));
     }
@@ -31,5 +31,10 @@ class QuestionController extends Controller
         Question::create($data);
 
         return redirect()->route('questions')->with('success','Created New Question');
+    }
+    //delete(Qusetion)
+
+    public function delete($id){
+        dd($id);
     }
 }

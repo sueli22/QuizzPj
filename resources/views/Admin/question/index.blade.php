@@ -26,6 +26,7 @@
         <thead class=" border-success">
             <tr>
                 <th>No</th>
+                <th>QusetionName</th>
                 <th>Category</th>
                 <th>Actions</th>
             </tr>
@@ -35,6 +36,7 @@
             <tr>
                 <td>{{ ++ $index}}</td>
                 <td>{{ $q->name}}</td>
+                <td>{{ $q->category->name ?? 'N/A'}}</td>
                 <td>
                     <form action="" method="POST"> @csrf @method('delete')
                         <a href="" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
