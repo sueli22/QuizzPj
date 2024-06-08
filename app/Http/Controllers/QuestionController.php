@@ -35,6 +35,27 @@ class QuestionController extends Controller
     //delete(Qusetion)
 
     public function delete($id){
-        dd($id);
+        Question::find($id)->delete();
+        return redirect()->route('questions')->with('success','Delete successfully');
+
+    }
+    //editPage
+
+    public function edit($id){
+        $categories = Category::all();
+        $q=Question::find($id);
+        return view('Admin.question.edit',compact('q','categories'));
+    }
+
+    public function update(Request $request,$id){
+       $data=$request->validate([
+        'name'=>'required',
+        'category_id'=>'required'
+       ]);
+
+       Question::find($id)->update($data);
+       return redirect()->route('questions')->with('success','Update  successfully');
+
+
     }
 }

@@ -42,5 +42,8 @@ Route::get('/question',[QuestionController::class,'index'])->name('questions');
 Route::get('/question/add',[QuestionController::class,'add'])->name('add.question');
 Route::post('question/store',[QuestionController::class,'store'])->name('store.question');
 Route::delete('question/delete,{id}',[QuestionController::class,'delete'])->name('delete.question');
+Route::get('question/edit,{id}',[QuestionController::class,'edit'])->name('edit.question');
+Route::put('question/update,{id}',[QuestionController::class,'update'])->name('update.question');
+
 
 

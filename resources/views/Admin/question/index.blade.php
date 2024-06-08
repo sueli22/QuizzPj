@@ -38,8 +38,8 @@
                 <td>{{ $q->name}}</td>
                 <td>{{ $q->category->name ?? 'N/A'}}</td>
                 <td>
-                    <form action="" method="POST"> @csrf @method('delete')
-                        <a href="" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                    <form action="{{route('delete.question',$q->id)}}" method="POST"> @csrf @method('delete')
+                        <a href="{{route('edit.question',$q->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
                         <button class="btn btn-sm btn-danger" onclick="return confirm('Are u sure to delete?')"><i class="fas fa-trash"></i></button>
                     </form>
                 </td>
