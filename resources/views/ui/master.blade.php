@@ -131,8 +131,8 @@
                                 <span class="spanOne"><b>{{ Auth::user()->name }}</b></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item"
-                                        href="@if (auth()->user()->role == 'admin') @else @endif">မိမိ့အကောင့်</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('profile')}} @endif">မိမိ့အကောင့်</a>
                                 <li>
                                     <form method="POST" action="{{route('logout')}}">
                                         @csrf
