@@ -132,12 +132,12 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('profile')}} @endif">မိမိ့အကောင့်</a>
+                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('profile')}} @endif">Account</a>
                                 <li>
                                     <form method="POST" action="{{route('logout')}}">
                                         @csrf
                                         <button type="submit" class="dropdown-item mt-2"
-                                            onclick="return confirm('Are you sure?')">အကောင့်ထွက်ရန်</button>
+                                            onclick="return confirm('Are you sure?')">Logout</button>
                                     </form>
                                 </li>
 

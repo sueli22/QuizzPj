@@ -96,14 +96,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('student.list')}}">
                         <i class="fa-solid fa-users-line"></i>
                         <span>StudentList</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('categories')}}">
                         <i class="fas fa-users"></i>
                         <span>Category</span>
                     </a>

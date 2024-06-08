@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,4 +21,18 @@ Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+//stulist
+
+Route::get('student/list',[AdminController::class,'studentList'])->name('student.list');
+
+//Category
+
+Route::get('/categories',[CategoryController::class,'categories'])->name('categories');
+Route::get('/category/add',[CategoryController::class,'add'])->name('add.category');
+Route::post('/category/store',[CategoryController::class,'store'])->name('store.category');
+Route::delete('/category/delete/{id}',[CategoryController::class,'delete'])->name('delete.category');
+Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('edit.category');
+Route::put('category/update/{id}',[CategoryController::class,'update'])->name('update.category');
+
 
