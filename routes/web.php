@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OptionController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,15 @@ Route::post('question/store',[QuestionController::class,'store'])->name('store.q
 Route::delete('question/delete,{id}',[QuestionController::class,'delete'])->name('delete.question');
 Route::get('question/edit,{id}',[QuestionController::class,'edit'])->name('edit.question');
 Route::put('question/update,{id}',[QuestionController::class,'update'])->name('update.question');
+
+//AnswerOptions
+
+Route::get('/options',[OptionController::class,'index'])->name('options');
+Route::get('/option/add',[OptionController::class,'add'])->name('add.option');
+Route::post('/options/store',[OptionController::class,'store'])->name('store.option');
+Route::delete('/option/delete/{id}',[OptionController::class,'delete'])->name('delete.option');
+Route::get('options/edit/{id}',[OptionController::class,'edit'])->name('edit.option');
+Route::put('optons/update/{id}',[OptionController::class,'update'])->name('update.option');
 
 
 

@@ -119,7 +119,12 @@
                     </a>
                 </li>
 
-
+                <li class="nav-item }">
+                    <a class="nav-link" href="{{route('options')}}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Answer options</span>
+                    </a>
+                </li>
 
                 <li class="nav-item ">
                     <a class="nav-link" href="">
