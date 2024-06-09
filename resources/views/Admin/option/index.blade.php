@@ -32,7 +32,7 @@
                                     <th>No</th>
                                     <th>Answer</th>
                                     <th>Question</th>
-                                    <th>Is_correct?</th>
+                                    <th>Points</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -42,7 +42,7 @@
                                         <td>{{ ++$index }}</td>
                                         <td>{{ $o->answer }}</td>
                                         <td>{{ $o->question->name ?? 'N/A' }}</td>
-                                        <td>{{ $o->is_correct }}</td>
+                                        <td>{{ $o->points }}</td>
                                         <td>
                                             <form action="{{ route('delete.option', $o->id) }}" method="POST">
                                                 @csrf

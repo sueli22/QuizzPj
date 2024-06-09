@@ -34,6 +34,10 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="mb-3">
+                                <label for="number_input" class="text-muted"><b>Points</b></label>
+                                <input type="number" min="0" name="points" id="pointst" class="form-control" />
+                            </div>
                         </div>
                         <div class="card-footer border-0">
                             <button type="submit" class="btn btn-sm wbtn text-white border-success">Add</button>

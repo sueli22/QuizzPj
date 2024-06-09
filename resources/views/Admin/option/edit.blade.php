@@ -23,11 +23,10 @@
             </div>
 
             <div class="card-body">
-                <label for="is_correct"><b>Is Correct</b></label>
-                <select name="is_correct" id="is_correct" class="form-control @error('is_correct') is-invalid @enderror">
-                    <option value="1" {{$option->is_correct == 1 ? 'selected' : ''}}>Yes</option>
-                    <option value="0" {{$option->is_correct == 0 ? 'selected' : ''}}>No</option>
-                </select>
+                <div class="mb-3">
+                    <label for="number_input" class="text-muted"><b>Points</b></label>
+                    <input type="number" min="0" name="points" id="pointst" value="{{$option->points ?? old('points')}}" class="form-control" />
+                </div>
                 @error('is_correct')
                     <span class="invalid-feedback">{{$message}}</span>
                 @enderror

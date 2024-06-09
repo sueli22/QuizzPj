@@ -30,7 +30,7 @@
             <tr>
                 <th>No</th>
                 <th>Answers</th>
-                <th>Is_correct</th>
+                <th>Points</th>
 
             </tr>
         </thead>
@@ -39,7 +39,7 @@
             <tr>
                 <td>{{ ++ $index}}</td>
                 <td>{{ $a->answer}}</td>
-                <td>{{ $a->is_correct}}</td>
+                <td>{{ $a->points}}</td>
 
             </tr>
             @endforeach

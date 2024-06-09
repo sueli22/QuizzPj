@@ -21,6 +21,7 @@ class OptionController extends Controller
     public function store(Request $request){
         $data=$request->validate([
             'answer'=>'required',
+            'points'=>'required',
             'question_id'=>'required'
 
         ]);
@@ -43,7 +44,7 @@ class OptionController extends Controller
     public function update(Request $request,$id){
       $data = $request->validate([
         'answer'=>"required",
-        'is_correct'=>'required',
+        'points'=>'required',
         'question_id'=>'required'
       ]);
      Option::find($id)->update($data);
