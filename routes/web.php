@@ -37,6 +37,7 @@ Route::delete('/category/delete/{id}',[CategoryController::class,'delete'])->nam
 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('edit.category');
 Route::put('category/update/{id}',[CategoryController::class,'update'])->name('update.category');
 
+
 //Question
 
 Route::get('/question',[QuestionController::class,'index'])->name('questions');
@@ -54,6 +55,9 @@ Route::post('/options/store',[OptionController::class,'store'])->name('store.opt
 Route::delete('/option/delete/{id}',[OptionController::class,'delete'])->name('delete.option');
 Route::get('options/edit/{id}',[OptionController::class,'edit'])->name('edit.option');
 Route::put('optons/update/{id}',[OptionController::class,'update'])->name('update.option');
+
+//SeeAnswerFromCategoryIndexPage
+Route::get('/seequestion/{id}',[CategoryController::class,'seeQuestions'])->name('see.questions');
 
 
 

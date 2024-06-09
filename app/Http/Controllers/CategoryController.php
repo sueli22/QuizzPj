@@ -53,4 +53,12 @@ class CategoryController extends Controller
         return redirect()->route('categories')->with('success','Updated');
 
      }
+
+     //seeAnswerListEachCategory
+
+     public function seeQuestions($id){
+        $category = Category::findOrFail($id);
+        $questions = $category->questions;
+        return view('Admin.category.seequestions',compact('category','questions'));
+     }
 }

@@ -27,6 +27,7 @@
             <tr>
                 <th>No</th>
                 <th>Category</th>
+                <th>Questions</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -35,6 +36,7 @@
             <tr>
                 <td>{{ ++ $index}}</td>
                 <td>{{ $category->name}}</td>
+                <th><a href="{{route('see.questions', $category->id)}}">See Questions</a></th>
                 <td>
                     <form action="{{route('delete.category',$category->id)}}" method="POST"> @csrf @method('delete')
                         <a href="{{route('edit.category',$category->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
