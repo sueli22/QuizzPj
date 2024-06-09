@@ -12,7 +12,7 @@ class QuestionController extends Controller
     //index
     public function index(){
 
-        $questions = Question::with('category')->get();
+        $questions = Question::with('category')->latest()->paginate(7);
 
         return view('admin.question.index', compact('questions'));
     }

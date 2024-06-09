@@ -132,7 +132,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('profile')}} @endif">Account</a>
+                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('home')}} @endif">Account</a>
                                 <li>
                                     <form method="POST" action="{{route('logout')}}">
                                         @csrf

@@ -12,7 +12,7 @@ class AdminController extends Controller
     }
 
     public function studentList(){
-        $students=User::where('role','user')->paginate(3);
+        $students=User::where('role','user')->paginate(10);
 
         return view('Admin.student.index',compact('students'));
 

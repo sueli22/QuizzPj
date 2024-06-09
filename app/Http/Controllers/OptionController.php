@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class OptionController extends Controller
 {
     public function index(){
-        $options=Option::with('question')->get();
+        $options=Option::with('question')->paginate(6);
         return view('Admin.option.index',compact('options'));
     }
 

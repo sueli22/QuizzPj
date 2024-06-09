@@ -45,6 +45,11 @@
             @endforeach
         </tbody>
         </table>
+        <div class="row mt-2 mb-5">
+            <div class="col-12 d-flex justify-content-center custom-pagination pagination">
+                {{ $categories->links() }}
+            </div>
+        </div>
     </div></div>
     @endif
 @endsection

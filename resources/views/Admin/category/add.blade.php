@@ -11,7 +11,7 @@
 
                     <div class="d-flex justify-content-between">
                         <h4>Add New Qusetion Category</h4>
-                        <a href="{{route('categories')}}" class="btn btn-sm wbtn text-white mb-3">Back</a>
+                        <a href="{{ route('categories') }}" class="btn btn-sm wbtn text-white mb-3">Back</a>
                     </div>
                     <div class="card mt-3">
                         <form action="{{ route('store.category') }}" method="POST">@csrf
