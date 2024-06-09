@@ -29,6 +29,7 @@
             <tr>
                 <th>No</th>
                 <th>Questions</th>
+                <th>SeeAnswer</th>
 
             </tr>
         </thead>
@@ -37,6 +38,7 @@
             <tr>
                 <td>{{ ++ $index}}</td>
                 <td>{{ $question->name}}</td>
+                <th><a href="{{route('see.answers', $question->id)}}">See Answers</a></th>
 
             </tr>
             @endforeach
