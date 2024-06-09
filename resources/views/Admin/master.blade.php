@@ -89,7 +89,7 @@
 
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('admin.index')}}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Home</span>
                     </a>
@@ -326,7 +326,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{route('profile.admin')}}">
 
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-900"></i>
                                     Profile

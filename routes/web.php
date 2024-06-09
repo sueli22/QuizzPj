@@ -61,5 +61,9 @@ Route::get('/seequestion/{id}',[CategoryController::class,'seeQuestions'])->name
 //SeeAnswersFromQuesionsIndex
 Route::get('/seeanswer/{id}',[QuestionController::class,'seeAnswers'])->name('see.answers');
 
+//AdminProfileRoute
 
+Route::get('/admin/profile',[AdminController::class,'adminprofile'])->name('profile.admin');
+Route::get('/admin/profile/edit/{id}',[AdminController::class,'editProfile'])->name('edit.profile.admin');
+Route::put('/admin/profile/update/{id}',[AdminController::class,'updateProflie'])->name('update.admin.profile');
 
