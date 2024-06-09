@@ -31,6 +31,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Question Name</th>
+                                    <th>See Answers</th>
                                     <th>Category</th>
                                     <th>Actions</th>
                                 </tr>
@@ -40,6 +41,7 @@
                                     <tr>
                                         <td>{{ ++$index }}</td>
                                         <td>{{ $q->name }}</td>
+                                        <th><a  href="{{route('see.answers',$q->id)}}">Click To See Answers</th>
                                         <td>{{ $q->category->name ?? 'N/A' }}</td>
                                         <td>
                                             <form action="{{ route('delete.question', $q->id) }}" method="POST">

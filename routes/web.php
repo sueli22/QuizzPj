@@ -56,8 +56,10 @@ Route::delete('/option/delete/{id}',[OptionController::class,'delete'])->name('d
 Route::get('options/edit/{id}',[OptionController::class,'edit'])->name('edit.option');
 Route::put('optons/update/{id}',[OptionController::class,'update'])->name('update.option');
 
-//SeeAnswerFromCategoryIndexPage
+//SeeQuestionsFromCategoryIndexPage
 Route::get('/seequestion/{id}',[CategoryController::class,'seeQuestions'])->name('see.questions');
+//SeeAnswersFromQuesionsIndex
+Route::get('/seeanswer/{id}',[QuestionController::class,'seeAnswers'])->name('see.answers');
 
 
 

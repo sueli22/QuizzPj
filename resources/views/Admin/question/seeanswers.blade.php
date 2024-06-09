@@ -9,34 +9,37 @@
         <!-- Page Header -->
         <div class="page-header">
             <div class="row align-items-center">
+                <div class="col-md-12"><h3> Anwer Of  - {{$question->name}}</h3></div>
                 <div class="col-md-6">
 
-                    <a href="{{route('categories')}}" class="btn btn-sm wbtn text-white mb-3">Back</a>
+                    <a href="{{route('questions')}}" class="btn btn-sm wbtn text-white mb-3">Back</a>
                 </div>
             </div>
         </div>
-<a href="{{route('add.question')}}" class="btn btn-sm wbtn text-white mb-3"><i class="fas fa-plus"></i>Add Question</a>
+<a href="{{route('add.option')}}" class="btn btn-sm wbtn text-white mb-3"><i class="fas fa-plus"></i>Add Answers</a>
 
 
 
 
 
-    @if ($questions->isEmpty())
-        <p class="text-danger fw-bold border p-2 rounded text-center my-5">No Questions has found  !  <a href="{{route('add.question')}}" class="text-decoration-underline"> Click here to create</a></p>
+    @if ($options->isEmpty())
+        <p class="text-danger fw-bold border p-2 rounded text-center my-5">No Answers has found  !  <a href="{{route('add.option')}}" class="text-decoration-underline"> Click here to create</a></p>
     @else
         <table class="table  border-success table-hover">
         <thead class=" border-success">
             <tr>
                 <th>No</th>
-                <th>Questions</th>
+                <th>Answers</th>
+                <th>Is_correct</th>
 
             </tr>
         </thead>
         <tbody class=" border-success">
-            @foreach ($questions as $index => $question)
+            @foreach ($options as $index => $a)
             <tr>
                 <td>{{ ++ $index}}</td>
-                <td>{{ $question->name}}</td>
+                <td>{{ $a->answer}}</td>
+                <td>{{ $a->is_correct}}</td>
 
             </tr>
             @endforeach

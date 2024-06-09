@@ -58,4 +58,11 @@ class QuestionController extends Controller
 
 
     }
+
+    //seeanser
+    public function seeAnswers($id){
+        $question = Question::findOrFail($id);
+        $options =$question->options;
+        return view('Admin.question.seeanswers',compact('question','options'));
+    }
 }
