@@ -11,6 +11,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h3 class="page-title">Qusetion of {{$category->name}}</h3>
+                    <a href="{{route('categories')}}" class="btn btn-sm wbtn text-white mb-3">Back</a>
                 </div>
             </div>
         </div>
@@ -19,39 +20,28 @@
 
 
 
-    @if ($answers->isEmpty())
+    @if ($questions->isEmpty())
         <p class="text-danger fw-bold border p-2 rounded text-center my-5">No Questions has found  !  <a href="{{route('add.question')}}" class="text-decoration-underline"> Click here to create</a></p>
     @else
         <table class="table  border-success table-hover">
         <thead class=" border-success">
             <tr>
                 <th>No</th>
-                <th>Category</th>
                 <th>Questions</th>
-                <th>Actions</th>
+
             </tr>
         </thead>
         <tbody class=" border-success">
-            @foreach ($categories as $index => $category)
+            @foreach ($questions as $index => $question)
             <tr>
                 <td>{{ ++ $index}}</td>
-                <td>{{ $category->name}}</td>
-                <th><a href="{{route('see.answers', $category->id)}}">See Questions</a></th>
-                <td>
-                    <form action="{{route('delete.category',$category->id)}}" method="POST"> @csrf @method('delete')
-                        <a href="{{route('edit.category',$category->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are u sure to delete?')"><i class="fas fa-trash"></i></button>
-                    </form>
-                </td>
+                <td>{{ $question->name}}</td>
+
             </tr>
             @endforeach
         </tbody>
         </table>
-        <div class="row mt-2 mb-5">
-            <div class="col-12 d-flex justify-content-center custom-pagination pagination">
-                {{ $categories->links() }}
-            </div>
-        </div>
+
     </div></div>
     @endif
 @endsection
