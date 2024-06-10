@@ -18,4 +18,8 @@ class Question extends Model
     public function options(){
         return $this->hasMany(Option::class);
     }
+
+    public function result(){
+        return $this->belongsTo(Result::class);
+    }
 }

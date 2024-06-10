@@ -115,7 +115,7 @@
                         <li class="nav-item "><a href="{{ route('register') }}"
                                 class="nav-link me-2 text-white fw-bold"><b>Register</b></a></li>
                     @else
-                        <li class="nav-item"><a href=""
+                        <li class="nav-item"><a href="{{ route('user.categories')}}"
                                 class="nav-link me-2 text-white fw-bold"><b>Category</b></a></li>
                         <li class="nav-item "><a href=""
                                 class="nav-link me-2 text-white fw-bold"><b>Score</b></a></li>

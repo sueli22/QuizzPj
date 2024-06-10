@@ -6,11 +6,20 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
+use LDAP\Result;
 
 Route::get('/', function () {
     return view('ui.home');
 })->name('home');
+
+//userCategories
+Route::get('/user/categories/',[UiController::class,'userCategories'])->name('user.categories');
+Route::get('/user/test/{id}',[UiController::class,'testStart'])->name('test.start');
+
+//storeResult
+
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
