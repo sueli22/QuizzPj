@@ -127,7 +127,7 @@
                 </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('scores.list')}}">
                         <i class="fa-regular fa-building"></i>
                         <span>Score</span>
                     </a>

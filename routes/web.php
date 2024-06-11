@@ -78,3 +78,12 @@ Route::get('/admin/profile',[AdminController::class,'adminprofile'])->name('prof
 Route::get('/admin/profile/edit/{id}',[AdminController::class,'editProfile'])->name('edit.profile.admin');
 Route::put('/admin/profile/update/{id}',[AdminController::class,'updateProflie'])->name('update.admin.profile');
 
+//score
+Route::get('/scores',[ResultController::class,'scoreList'])->name('scores.list');
+Route::get('/delete/scores',[ResultController::class,'deleteAll'])->name('delete.all.score');
+
+///download result pdf
+Route::get('/download-quiz-results/{id}', [ResultController::class, 'downloadQuizResults'])->name('download.pdf');
+Route::get('/download-quiz-results-doc/{id}', [ResultController::class, 'downloadQuizResultsDoc'])->name('download.word');
+Route::get('/download-quiz-results-csv/{id}', [ResultController::class, 'downloadQuizResultsCSV'])->name('download.csv');
+
