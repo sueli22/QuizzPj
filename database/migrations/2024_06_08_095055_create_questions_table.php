@@ -5,27 +5,29 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Category;
 
-return new class extends Migration
-{
+
     /**
      * Run the migrations.
      */
-    public function up(): void
+    class CreateQuestionsTable extends Migration
     {
-        Schema::create('questions', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->longText('name');
-            $table->timestamps();
-        });
+        public function up()
+        {
+            Schema::create('questions', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+                $table->longText('name');
+                $table->timestamps();
 
-    }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('questions');
-    }
-};
+            });
+        }
+
+        public function down()
+        {
+            // Drop foreign key constraint before dropping the table
+
+
+            Schema::dropIfExists('questions');
+        }
+    };

@@ -21,7 +21,7 @@
 
 
     @if ($categories->isEmpty())
-        <p class="text-danger fw-bold border p-2 rounded text-center my-5">No categories has found  !  <a href="}" class="text-decoration-underline"> Click here to create</a></p>
+        <p class="text-danger fw-bold border p-2 rounded text-center my-5">No categories has found  !  <a href="{{route('add.category')}}" class="text-decoration-underline"> Click here to create</a></p>
     @else
         <table class="table  border-success table-hover">
         <thead class=" border-success">
