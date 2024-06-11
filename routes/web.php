@@ -17,6 +17,8 @@ Route::get('/', function () {
 //userCategories
 Route::get('/user/categories/',[UiController::class,'userCategories'])->name('user.categories');
 Route::get('/user/test/{id}',[UiController::class,'testStart'])->name('test.start');
+Route::post('test',[ResultController::class, 'store'])->name('client.test.store');
+Route::get('results/{result_id}',[ResultController::class, 'show'])->name('client.results.show');
 
 //storeResult
 

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('results', function (Blueprint $table) {
+        Schema::create('question_result', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->constrained()->cascadeOnUpdate();
-            $table->integer('category_id')->constrained()->cascadeOnUpdate();
-            $table->integer('total_points')->nullable();
+            $table->foreignId('result_id')->constrained()->onDelete('cascade');
+            $table->foreignId('question_id')->constrained()->onDelete('cascade');
+            $table->foreignId('option_id')->constrained()->onDelete('cascade');
+            $table->integer('points');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('results');
+        Schema::dropIfExists('question_results');
     }
 };

@@ -11,12 +11,12 @@ class Category extends Model
 
     protected $guarded=[];
 
-    public function questions(){
+    public function questions()
+    {
         return $this->hasMany(Question::class);
     }
 
-    public function results()
-    {
-        return $this->hasMany(Result::class);
+    public function result(){
+        return $this->hasMany(Question::class);
     }
 }

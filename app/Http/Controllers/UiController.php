@@ -29,12 +29,19 @@ class UiController extends Controller
     //start test after choosing category
 
     public function testStart($id){
-        $category = Category::with(['questions.options'])->findOrFail($id);
+        $category = Category::with(['questions' => function ($query) {
+            $query->inRandomOrder()
+                ->with(['options' => function ($query) {
+                    $query->inRandomOrder();
+                }]);
+        }])->findOrFail($id);
 
         return view('ui.test',compact('category'));
 
 
     }
+
+
 
     //submit
 
