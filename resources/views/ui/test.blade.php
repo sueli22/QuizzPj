@@ -1,20 +1,19 @@
-<!-- resources/views/category/questions.blade.php -->
 @extends('ui.master')
 
 @section('content')
 <style>
-     .box {
-      border: 1px solid #ccc;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Extra small shadow */
-      transition: box-shadow 0.3s ease;
+    .box {
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
     }
- .box:hover {
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Extra small hover shadow */
+    .box:hover {
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     }
 </style>
 <div class="page-wrapper mt-5">
     <div class="card bg-dark text-white">
-        <img class="w-100" src="{{ asset('ui-images/q1.jpg') }}" alt="Card image" style="height: auto; filter: blur(90px); object-fit: cover;"> <!-- Reduced blur -->
+        <img class="w-100" src="{{ asset('ui-images/q1.jpg') }}" alt="Card image" style="height: auto; filter: blur(90px); object-fit: cover;">
         <div class="card-img-overlay">
             <div class="container">
                 <div class="row justify-content-center mt-5">
@@ -22,7 +21,9 @@
                         <div>
                             <h1 style="font-family: 'Freckle Face', cursive;" class="card-header">Let Start Testing</h1>
                             <div class="card-body" style="font-family: 'Freckle Face', cursive;">
-                                <form method="POST" action="{{route('client.test.store')}}">
+                                <div id="timer" style="font-size: 24px; margin-bottom: 20px;">01:00</div> <!-- Countdown timer -->
+                                <div id="time-limit-message" style="font-size: 24px; margin-bottom: 20px; display: none; color: red;">သင့်ရဲ့ ဖြေဆိုချိန်ပြည့်သွားပါပီ နောင်တကြိမ်ကြိုးစားပါ!</div> <!-- Time limit message -->
+                                <form id="test-form" method="POST" action="{{route('client.test.store')}}">
                                     @csrf
                                     <div class="mb-1">
                                         <div class="card-header">Your Choice Category - {{ $category->name }}</div>
@@ -67,4 +68,37 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Set the countdown time in seconds
+    let timeLeft = 60;
+
+    // Get the timer element and the time limit message element
+    const timerElement = document.getElementById('timer');
+    const timeLimitMessage = document.getElementById('time-limit-message');
+
+    // Function to format the time as mm:ss
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+
+    // Function to update the timer
+    function updateTimer() {
+        if (timeLeft > 0) {
+            timeLeft--;
+            timerElement.textContent = formatTime(timeLeft);
+        } else {
+            // Disable all inputs and buttons when the time is up
+            document.querySelectorAll('input, button').forEach(el => el.disabled = true);
+            // Display the time limit message
+            timeLimitMessage.style.display = 'block';
+            clearInterval(timerInterval);
+        }
+    }
+
+    // Update the timer every second
+    const timerInterval = setInterval(updateTimer, 1000);
+</script>
 @endsection

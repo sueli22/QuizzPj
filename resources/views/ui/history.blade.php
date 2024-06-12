@@ -1,16 +1,47 @@
-@extends('admin.master')
+@extends('ui.master')
 @section('content')
 <style>
-    .fontwmz {
-        font-family: 'Freckle Face', cursive;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+
 
     .btn-fixed-size {
         width: 80px; /* Fixed width */
         height: 30px; /* Fixed height */
         font-size: 12px; /* Adjust font size */
         padding: 5px; /* Adjust padding */
+    }
+
+
+    .fontwmz {
+        font-family: 'Freckle Face', cursive;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .table {
+        font-size: 0.875rem; /* Smaller font size */
+    }
+    .table th, .table td {
+        padding: 0.5rem; /* Less padding */
+    }
+    .table th {
+        white-space: nowrap; /* Prevent line breaks */
+    }
+    .table th, .table td {
+        vertical-align: middle; /* Center content vertically */
+    }
+    .table th:first-child, .table td:first-child {
+        width: 5%; /* Adjust width of the first column */
+    }
+    .table th:nth-child(2), .table td:nth-child(2) {
+        width: 15%; /* Adjust width of the Name column */
+    }
+    .table th:nth-child(3), .table td:nth-child(3),
+    .table th:nth-child(4), .table td:nth-child(4),
+    .table th:nth-child(5), .table td:nth-child(5),
+    .table th:nth-child(6), .table td:nth-child(6),
+    .table th:nth-child(7), .table td:nth-child(7) {
+        width: 10%; /* Adjust width of other columns */
+    }
+    .table th:nth-child(8), .table td:nth-child(8) {
+        width: 20%; /* Adjust width of the Download column */
     }
 </style>
 <div class="page-wrapper mt-0">
@@ -19,20 +50,17 @@
         style="height:720px; filter: blur(60px); object-fit: cover;">
         <div class="card-img-overlay">
             <!-- Page Content -->
-            <div class="content container ">
+            <div class="content container mt-5">
                 <!-- Page Header -->
                 <div class="page-header">
                     <div class="row align-items-center">
-                        <h3 class="page-title mb-3 fontwmz">Score Of Student Previous Test</h3>
-                        @if(!$scores->isEmpty())
-                        <a href="{{ route('delete.all.score') }}" class="ml-3 col-3 btn btn-danger text-white mb-3 btn-fixed-size" onclick="return confirm('Are you sure to delete all records?')">Delete All Records</a>
-                            @endif
+                        <h3 class="page-title mb-3 fontwmz">Score Of Your Previous Test</h3>
                         <div class="col-md-6"></div>
                     </div>
                 </div>
 
                 @if ($scores->isEmpty())
-                   <h2>No History Students Have Answered</h2>
+                   <h2>No History You Have Answered</h2>
                 @else
                     <table class="table border-success table-hover" style="table-layout: fixed; width: 100%;">
                         <thead class="border-success">
@@ -43,7 +71,7 @@
                                 <th>Questions</th>
                                 <th>Percentage</th>
                                 <th>Grade</th>
-                                <th>Time</th>
+                                <th>Answer Time</th>
                                 <th>Category</th>
                                 <th>Download</th>
                             </tr>
@@ -53,23 +81,12 @@
                             <tr>
                                 <td>{{ ++$index }}</td>
                                 <td>{{ $s->user->name ?? 'N/A' }}</td>
-                                @if ($s->category)
-                                    <td>{{ $s->total_points ?? '0' }}/{{ count($s->category->questions) }} Scores</td>
-                                    <td>{{ count($s->category->questions) }}Q</td>
-                                    @php
-                                        $questionCount = count($s->category->questions);
-                                        $percentage = ($questionCount > 0) ? (($s->total_points ?? 0) / $questionCount * 100) : 0;
-                                    @endphp
-                                @else
-                                    <td>0/0 Scores</td>
-                                    <td>0Q</td>
-                                    @php
-                                        $percentage = 0;
-                                    @endphp
-                                @endif
-                                <td>{{ $percentage }}%</td>
+                                <td>{{ $s->total_points ?? '0' }}/{{ count($s->category->questions) }} Scores</td>
+                                <td>{{ count($s->category->questions) }}Q</td>
+                                <td>{{ (count($s->category->questions) > 0) ? (($s->total_points ?? 0) / count($s->category->questions) * 100) : 0 }}%</td>
                                 <td>
                                     @php
+                                        $percentage = (count($s->category->questions) > 0) ? (($s->total_points ?? 0) / count($s->category->questions) * 100) : 0;
                                         $grade = ''; // Initialize grade variable
                                         if ($percentage > 80) {
                                             $grade = 'A';
@@ -84,7 +101,7 @@
                                     {{ $grade }}
                                 </td>
                                 <td>{{ $s->created_at }}</td>
-                                <td>{{ $s->category->name ?? 'N/A' }}</td>
+                                <td>{{ $s->category->name }}</td>
                                 <td>
                                     <div class="row gap-2">
                                         <a href="{{ route('download.pdf', $s->id) }}" class="col-3 btn btn-success text-white mb-3 btn-fixed-size">pdf</a>

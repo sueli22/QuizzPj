@@ -45,10 +45,13 @@ class AdminController extends Controller
             'image' => 'nullable|image|mimes:jpg,png',
         ]);
 
-        $image = $request->file('image');
-        $imageName = uniqid() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/profile-images', $imageName);
-        $data['image'] = $imageName;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = uniqid() . '_' . $image->getClientOriginalName();
+            $image->storeAs('public/profile-images', $imageName);
+            $data['image'] = $imageName;
+        }
+
         User::findOrFail($id)->update($data);
         return redirect()->route('profile.admin', $id);
     }

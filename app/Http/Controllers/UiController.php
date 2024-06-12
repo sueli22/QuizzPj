@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Option;
 use App\Models\Result;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UiController extends Controller
 {
@@ -20,30 +22,38 @@ class UiController extends Controller
 
 
     //To show categoriees to user panel
-
     public function userCategories(){
 
         $categories = Category::all();
         return view('ui.categories',compact('categories'));
     }
+
     //start test after choosing category
+    public function testStart(Request $request, $id){
 
-    public function testStart($id){
-        $category = Category::with(['questions' => function ($query) {
-            $query->inRandomOrder()
-                ->with(['options' => function ($query) {
-                    $query->inRandomOrder();
-                }]);
-        }])->findOrFail($id);
-
-        return view('ui.test',compact('category'));
+    $category = Category::with(['questions' => function ($query) {
+        $query->inRandomOrder()
+            ->with(['options' => function ($query) {
+                $query->inRandomOrder();
+            }]);
+    }])->findOrFail($id);
+       return view('ui.test', compact('category'));
 
 
     }
 
 
 
-    //submit
+ //toshow results user already answered
+
+ public function history(){
+    $id=Auth::user()->id;
+    $scores=Result::with(['user','category'])->where('user_id',$id)->paginate(5);
+
+
+    return view('ui.history',compact('scores'));
+
+ }
 
 
 

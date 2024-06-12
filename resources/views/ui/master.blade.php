@@ -32,7 +32,7 @@
 
         nav {
             background-color: rgb(17, 63, 90);
-            box-shadow: 3px 1px 1px rgb(237, 240, 240);
+            box-shadow: 3px 1px 1px rgb(17, 20, 20);
             position: relative;
         }
 
@@ -117,8 +117,7 @@
                     @else
                         <li class="nav-item"><a href="{{ route('user.categories')}}"
                                 class="nav-link me-2 text-white fw-bold"><b>Category</b></a></li>
-                        <li class="nav-item "><a href=""
-                                class="nav-link me-2 text-white fw-bold"><b>Score</b></a></li>
+
                     @endif
                     <li class="nav-item"><a href="{{ route('contact') }}"
                             class="nav-link me-2 text-white fw-bold"><b>ContactUs</b></a></li>
@@ -140,6 +139,9 @@
                                             onclick="return confirm('Are you sure?')">Logout</button>
                                     </form>
                                 </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{route('history')}}">History</a>
+                                <li>
 
                             </ul>
                         </li>
@@ -153,7 +155,8 @@
     </div>
 
 
-    <footer class="text-center py-5" style="  background-color:  rgb(40, 8, 61);">
+    <footer class="text-center py-5" style=" background-color: rgb(15, 89, 92);
+">
         <div class="container">
             <div class="row">
                 <div class="col">

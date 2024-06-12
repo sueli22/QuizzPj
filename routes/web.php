@@ -19,6 +19,7 @@ Route::get('/user/categories/',[UiController::class,'userCategories'])->name('us
 Route::get('/user/test/{id}',[UiController::class,'testStart'])->name('test.start');
 Route::post('test',[ResultController::class, 'store'])->name('client.test.store');
 Route::get('results/{result_id}',[ResultController::class, 'show'])->name('client.results.show');
+Route::get('history',[UiController::class,'history'])->name('history');
 
 //storeResult
 
@@ -86,4 +87,6 @@ Route::get('/delete/scores',[ResultController::class,'deleteAll'])->name('delete
 Route::get('/download-quiz-results/{id}', [ResultController::class, 'downloadQuizResults'])->name('download.pdf');
 Route::get('/download-quiz-results-doc/{id}', [ResultController::class, 'downloadQuizResultsDoc'])->name('download.word');
 Route::get('/download-quiz-results-csv/{id}', [ResultController::class, 'downloadQuizResultsCSV'])->name('download.csv');
+
+
 
