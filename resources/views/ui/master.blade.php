@@ -19,6 +19,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
+
+.custom-table {
+    background-color: transparent;
+    width: 100%;
+
+
+}
+.custom-table td, .custom-table th {
+    border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
+    padding: 10px; /* Add padding for cell content */
+}
         body,
         html {
             height: 100%;

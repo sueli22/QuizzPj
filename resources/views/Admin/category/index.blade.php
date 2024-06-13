@@ -23,7 +23,7 @@
     @if ($categories->isEmpty())
         <p class="text-danger fw-bold border p-2 rounded text-center my-5">No categories has found  !  <a href="{{route('add.category')}}" class="text-decoration-underline"> Click here to create</a></p>
     @else
-        <table class="table  border-success table-hover">
+        <table class="custom-table  border-success table-hover">
         <thead class=" border-success">
             <tr>
                 <th>No</th>
@@ -37,7 +37,7 @@
             <tr>
                 <td>{{ ++ $index}}</td>
                 <td>{{ $category->name}}</td>
-                <th><a href="{{route('see.questions', $category->id)}}">See Questions</a></th>
+                <th><a href="{{route('see.questions', $category->id)}}" class="text-white">See Questions</a></th>
                 <td>
                     <form action="{{route('delete.category',$category->id)}}" method="POST"> @csrf @method('delete')
                         <a href="{{route('edit.category',$category->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>

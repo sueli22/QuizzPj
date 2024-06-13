@@ -26,7 +26,7 @@
                                 href="{{ route('add.option') }}" class="text-decoration-underline"> Click here to create</a>
                         </p>
                     @else
-                        <table class="table table-sm border-success table-hover small">
+                        <table class="custom-table table-sm border-success table-hover small">
                             <thead class="border-success">
                                 <tr>
                                     <th>No</th>

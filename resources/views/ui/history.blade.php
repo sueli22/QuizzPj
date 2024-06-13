@@ -43,6 +43,11 @@
     .table th:nth-child(8), .table td:nth-child(8) {
         width: 20%; /* Adjust width of the Download column */
     }
+    .wbtn{
+
+        overflow: hidden;
+
+    }
 </style>
 <div class="page-wrapper mt-0">
     <div class="card bg-dark text-white">
@@ -62,7 +67,7 @@
                 @if ($scores->isEmpty())
                    <h2>No History You Have Answered</h2>
                 @else
-                    <table class="table border-success table-hover" style="table-layout: fixed; width: 100%;">
+                    <table class="custom-table border-success table-hover" style="table-layout: fixed; width: 100%;">
                         <thead class="border-success">
                             <tr>
                                 <th>#</th>
@@ -104,9 +109,9 @@
                                 <td>{{ $s->category->name }}</td>
                                 <td>
                                     <div class="row gap-2">
-                                        <a href="{{ route('download.pdf', $s->id) }}" class="col-3 btn btn-success text-white mb-3 btn-fixed-size">pdf</a>
-                                        <a href="{{ route('download.word', $s->id) }}" class="col-3 btn btn-danger text-white mb-3 btn-fixed-size">word</a>
-                                        <a href="{{ route('download.csv', $s->id) }}" class="col-3 btn btn-warning text-white mb-3 btn-fixed-size">CSV</a>
+                                        <a href="{{ route('download.pdf', $s->id) }}" class="wbtn  col-3 btn btn-success text-white mb-3 btn-fixed-size">pdf</a>
+                                        <a href="{{ route('download.word', $s->id) }}" class="wbtn col-3 btn btn-danger text-white mb-3 btn-fixed-size">word</a>
+                                        <a href="{{ route('download.csv', $s->id) }}" class="wbtn col-3 btn btn-warning text-white mb-3 btn-fixed-size">CSV</a>
                                     </div>
                                 </td>
                             </tr>

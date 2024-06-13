@@ -94,7 +94,11 @@
             document.querySelectorAll('input, button').forEach(el => el.disabled = true);
             // Display the time limit message
             timeLimitMessage.style.display = 'block';
-            clearInterval(timerInterval);
+
+            // Redirect to another page after 5 seconds
+            setTimeout(function() {
+            window.location.href = '{{ route("home") }}';
+           }, 5000); // Adjust the delay time (in milliseconds) as needed
         }
     }
 

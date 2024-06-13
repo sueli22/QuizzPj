@@ -26,7 +26,7 @@
                                 href="{{ route('add.question') }}" class="text-decoration-underline"> Click here to
                                 create</a></p>
                     @else
-                        <table class="table table-sm border-success table-hover small">
+                        <table class="custom-table table-sm border-success table-hover small">
                             <thead class="border-success">
                                 <tr>
                                     <th>No</th>
@@ -41,7 +41,7 @@
                                     <tr>
                                         <td>{{ ++$index }}</td>
                                         <td>{{ $q->name }}</td>
-                                        <th><a  href="{{route('see.answers',$q->id)}}">Click To See Answers</th>
+                                        <th><a  href="{{route('see.answers',$q->id)}}" class="text-white">Click To See Answers</th>
                                         <td>{{ $q->category->name ?? 'N/A' }}</td>
                                         <td>
                                             <form action="{{ route('delete.question', $q->id) }}" method="POST">

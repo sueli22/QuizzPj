@@ -4,13 +4,15 @@
     .fontwmz {
         font-family: 'Freckle Face', cursive;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
     }
 
     .btn-fixed-size {
         width: 80px; /* Fixed width */
         height: 30px; /* Fixed height */
-        font-size: 12px; /* Adjust font size */
-        padding: 5px; /* Adjust padding */
+        font-size: 9px; /* Adjust font size */
+        padding: 5px;
+        overflow: hidden;/* Adjust padding */
     }
 </style>
 <div class="page-wrapper mt-0">
@@ -25,7 +27,7 @@
                     <div class="row align-items-center">
                         <h3 class="page-title mb-3 fontwmz">Score Of Student Previous Test</h3>
                         @if(!$scores->isEmpty())
-                        <a href="{{ route('delete.all.score') }}" class="ml-3 col-3 btn btn-danger text-white mb-3 btn-fixed-size" onclick="return confirm('Are you sure to delete all records?')">Delete All Records</a>
+                        <a href="{{ route('delete.all.score') }}" style=" font-size: 12px;" class="ml-3 col-3 btn btn-danger text-white mb-3 btn-fixed-size" onclick="return confirm('Are you sure to delete all records?')">Delete All Records</a>
                             @endif
                         <div class="col-md-6"></div>
                     </div>
@@ -34,7 +36,7 @@
                 @if ($scores->isEmpty())
                    <h2>No History Students Have Answered</h2>
                 @else
-                    <table class="table border-success table-hover" style="table-layout: fixed; width: 100%;">
+                    <table class="custom-table border-success table-hover" style="table-layout: fixed; width: 100%;">
                         <thead class="border-success">
                             <tr>
                                 <th>#</th>

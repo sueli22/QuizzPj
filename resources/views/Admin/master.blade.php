@@ -44,6 +44,7 @@
 
        .wbtn{
         background-color: rgb(17, 63, 90);
+        overflow: hidden;
        }
 
        .wtext{
@@ -62,6 +63,17 @@
         transform: scale(1.02);
     }
 
+
+    .custom-table {
+    background-color: transparent;
+    width: 100%;
+
+
+}
+.custom-table td, .custom-table th {
+    border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
+    padding: 10px; /* Add padding for cell content */
+}
 
     </style>
 </head>
