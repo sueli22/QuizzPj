@@ -1,53 +1,140 @@
 @extends('ui.master')
 @section('content')
 
+    <!-- slider section -->
+    <section class=" slider_section position-relative mt-5">
+      <div class="container mt-5">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2 style=" color:rgb(14, 47, 48)">
+                        welcome to
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
+                      </h2>
+                      <h1 style="font-family: 'Bangers', cursive; color:rgb(14, 47, 48);font-weight: bold;font-size:6rem">
+                        Quizz Management System
+                       </h1>
+                      <h5 class="mt-4 fw-bold" style="font-family: 'Bangers', cursive; color:rgb(14, 47, 48) ">
+                        စူးစမ်းချင်စိတ်ကို တိုးပွားစေပြီး သင်ယူမှုကို ဂုဏ်ပြုသော နည်းပညာဖြင့် ပံ့ပိုးထားသော အသိပညာရှာဖွေမှုကို အတူတကွ စတင်လိုက်ကြပါစို့
+                      </h5>
+                      <div class="">
+                        <a href="{{route('login')}}">
+                         Login
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2  style="font-family: 'Bangers', cursive; color:rgb(59, 10, 18)">
 
 
-.header__container h1 {
-  margin-bottom: 7rem;
-  font-size: 90px;
-  font-weight: 700;
-  line-height: 5rem;
-  color: var(--text-dark);
-}
+                      </h2>
+                      <h1 class="mb-5" style="font-family: 'Bangers', cursive; color:rgb(14, 47, 48);font-weight: bold;">
+                        ညဏ်စမ်းအဖြေ ရှာကြည့်ရအောင်
+                      </h1 >
+                      <p style=" color:rgb(58, 70, 17)">
+                        စူးစမ်းချင်စိတ်ကို တိုးပွားစေပြီး သင်ယူမှုကို ဂုဏ်ပြုသော နည်းပညာဖြင့် ပံ့ပိုးထားသော အသိပညာရှာဖွေမှုကို အတူတကွ စတင်လိုက်ကြပါစို့
+                      </p>
+                      <div class="">
+                        <a href="{{route('login')}}">
+                            Login
+                           </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+               <section class="do_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
 
+        </h2>
+        <h3 style="font-family: 'Bangers', cursive; color:rgb(14, 47, 48);font-weight: bold;">
 
-
-    </style>
-
-<div class="page-wrapper mt-0 ">
-    <div class="card  bg-dark text-white">
-        <img class="w-100" src="{{asset('ui-images/q1.jpg')}}" alt="Card image" style="height: 550px; filter: blur(40px); object-fit: cover;">
-        <div class="card-img-overlay">
-    <header class="container-fruid mt-5  header__content header__container">
-
-      <div class="row mt-5 align-item-center"  data-aos="fade-up"  data-aos-anchor-placement="top-center"  data-aos-duration="1000" data-aos-delay="400" data-aos-offset="50">
-           <div class="col-md-12 ml-5 col-12 mt-5 " style="font-family: 'Freckle Face', cursive; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-            <h1 class="mt-5 ml-5" >Quizz <span style="color:rgb(125, 245, 245); "> Management </span><span class="text-right  fst-italic" style="color:rgb(209, 243, 14);"> System</span> </h1>
-
-          </div>
+Enhancing Education through Interactive Quizzes</h3>
 
       </div>
+      <div class="do_container">
+        <div class="box arrow-start arrow_bg">
+          <div class="img-box">
+            <img class="rounded-circle" src="{{asset('ui-images/download.jpg')}}" style="width:100px;height:100px">
+          </div>
+          <div class="detail-box">
+            <h6 style="color:rgb(14, 47, 48);font-weight: bold;">
+              Thinking
+            </h6>
+          </div>
+        </div>
+        <div class="box arrow-middle arrow_bg">
+          <div class="img-box">
+            <img class="rounded-circle" src="{{asset('ui-images/t1.jpg')}}" style="width:100px;height:100px">
+          </div>
+          <div class="detail-box">
+            <h6 style="color:rgb(14, 47, 48);font-weight: bold;">
+              Make
+            </h6>
+          </div>
+        </div>
+        <div class="box arrow-middle arrow_bg">
+          <div class="img-box">
+            <img class="rounded-circle" src="{{asset('ui-images/t2.jpg')}}" style="width:100px;height:100px">
+          </div>
+          <div class="detail-box">
+            <h6 style="color:rgb(14, 47, 48);font-weight: bold;">
+             Your
+            </h6>
+          </div>
+        </div>
+        <div class="box arrow-end arrow_bg">
+          <div class="img-box">
+            <img class="rounded-circle" src="{{asset('ui-images/t3.jpg')}}" style="width:100px;height:100px">
+          </div>
+          <div class="detail-box">
+            <h6 style="color:rgb(14, 47, 48);font-weight: bold;">
+             Skill
+            </h6>
+          </div>
+        </div>
+        <div class="box ">
+          <div class="img-box">
+            <img class="rounded-circle" src="{{asset('ui-images/u.jpg')}}" style="width:100px;height:100px">
+          </div>
+          <div class="detail-box">
+            <h6 style="color:rgb(14, 47, 48);font-weight: bold;">
+             better
+            </h6>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    </header>
+  </section>
+            </div>
+          </div>
+        </div>
 
-      <script src="https://unpkg.com/scrollreveal"></script>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-        AOS.init();
-    </script>
+      </div>
 
-    </body>
-  </html>
 
+    </section>
+    <!-- end slider section -->
+  </div>
 @endsection

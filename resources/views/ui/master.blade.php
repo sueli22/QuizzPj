@@ -1,249 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <title>QuizzNwk</title>
+  <title>NaingWinKO</title>
 
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-    <!-- bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{asset('user/css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{asset('user/css/responsive.css')}}" rel="stylesheet" />
+  <link href="{{asset('user/css/bootstrap.css')}}" rel="stylesheet" />
+  <link href="{{asset('user/css/style.css.map')}}" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+  <!-- jQuery -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-.custom-table {
-    background-color: transparent;
-    width: 100%;
+  <style>
+    body, html {
+      height: auto;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
 
+    .header_section {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background-color: #f0f8ff;/* Ensure the background is opaque */
+    }
 
-}
-.custom-table td, .custom-table th {
-    border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
-    padding: 10px; /* Add padding for cell content */
-}
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-        }
+    .content {
+      margin-top: 100px; /* Adjust according to your navbar height */
+      min-height: 70vh;
+    }
 
-        .content {
-            min-height: 70vh;
-            /* Minimum height of the viewport */
-        }
+    .custom-table {
+      background-color: transparent;
+      width: 100%;
+    }
 
-        nav {
-            background-color: rgb(17, 63, 90);
-            box-shadow: 3px 1px 1px rgb(17, 20, 20);
-            position: relative;
-        }
-
-        .navbar-brand img {
-            height: 70px;
-            /* Adjust the height as needed */
-            width: 70px;
-            /* Maintain aspect ratio */
-        }
-
-        .navbar-toggler {
-            background-color: rgb(15, 89, 92);
-        }
-
-        .dropdown-menu {
-            background-color: rgb(15, 89, 92);
-            color: white;
-        }
-
-        .green {
-            background-color: rgb(15, 89, 92);
-        }
-
-        .dropdown-item {
-            color: rgb(255, 255, 255);
-        }
-
-        .dropdown-item:hover {
-            background-color: rgb(191, 204, 188);
-        }
-
-
-        .fixed-top-bar {
-            width: 100%;
-            height: 80px;
-            line-height: 20px;
-            text-align: center;
-        }
-
-        green {
-            background-color: rgb(45, 211, 59);
-        }
-
-        .profileimg {
-
-            width: 50%;
-            border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 3px 3px 3px rgb(156, 255, 27);
-        }
-    </style>
+    .custom-table td, .custom-table th {
+      border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
+      padding: 10px; /* Add padding for cell content */
+    }
+  </style>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-xl sticky-top position-fixed fixed-top-bar  p-5">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-center navbar-brand">
-                <div><img src="{{ asset('ui-images/t2.jpg') }}" alt="Brand Logo" class="rounded-circle"></div>
-                <div class="mt-3 ms-2">
-                    <a class="navbar-brand text-white fst-italic" href=""><b>Quizz <sup>for student</sup>
-                        </b></a>
-                </div>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3" style=" border-bottom: 2px solid #626f8b;">
+          <a class="navbar-brand" href="index.html">
+            <div><img src="{{asset('ui-images/q33.jpg')}}" style="width:80px;height:80px" alt="Brand Logo" class="rounded-circle"></div>
+            <div class="mt-3 ms-2">
+              <a class="navbar-brand fst-italic" href="{{url('/')}}" style="color:rgb(14, 47, 48)"><b>Quizz<sup>MS</sup></b></a>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="{{ route('home') }}"
-                            class="nav-link me-2 text-white fw-bold"><b>Home</b></a></li>
-                    <li class="nav-item"><a href="{{ route('about') }}"
-                            class="nav-link me-2 text-white  fw-bold"><b>About</b></a></li>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                    @if (!Auth::check())
-                        <li class="nav-item"><a href="{{ route('login') }}"
-                                class="nav-link me-2 text-white fw-bold"><b>Login</b></a></li>
-                        <li class="nav-item "><a href="{{ route('register') }}"
-                                class="nav-link me-2 text-white fw-bold"><b>Register</b></a></li>
-                    @else
-                        <li class="nav-item"><a href="{{ route('user.categories')}}"
-                                class="nav-link me-2 text-white fw-bold"><b>Category</b></a></li>
-
-                    @endif
-                    <li class="nav-item"><a href="{{ route('contact') }}"
-                            class="nav-link me-2 text-white fw-bold"><b>ContactUs</b></a></li>
-
-
-                    @if (Auth::check())
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="spanOne"><b>{{ Auth::user()->name }}</b></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('admin.index')}} @else {{route('home')}} @endif">Account</a>
-                                <li>
-                                    <form method="POST" action="{{route('logout')}}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item mt-2"
-                                            onclick="return confirm('Are you sure?')">Logout</button>
-                                    </form>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{route('history')}}">History</a>
-                                <li>
-
-                            </ul>
-                        </li>
-                    @endif
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{route('home')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('about')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">About</a>
+                </li>
+                @if(Auth::check())
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('user.categories')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">Category</a>
+                </li>
+                @else
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('login')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('register')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Register</a>
+                </li>
+                @endif
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('contact')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Contact us</a>
+                </li>
+                @if(Auth::check())
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">
+                    {{Auth::user()->name}}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ Auth::user()->role == 'admin' ? route('profile.admin') : route('home') }}">Profile</a>
+                    <a class="dropdown-item" href="{{route('history')}}">History</a>
+                    <div class="dropdown-divider"></div>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <button type="submit" class="dropdown-item mt-2" onclick="return confirm('Are you sure?')">အကောင့်ထွက်ရန်</button>
+                    </form>
+                  </div>
+                </li>
+                @endif
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="images/user.png" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
             </div>
-        </div>
-    </nav>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-    <div class="content mt-5 ">
-        @yield('content')
+    <div class="content">
+      @yield('content')
     </div>
 
+    <!-- end info_section -->
 
-    <footer class="text-center py-5" style=" background-color: rgb(15, 89, 92);
-">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="text-white">© 2024 Computer University Thesis Project</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- footer section -->
+    <section class="container-fluid footer_section p-5 mt-5">
+      <p>
+        &copy; 2024 All Rights Reserved By
+        <a href="https://html.design/">Naing Win Ko</a>
+      </p>
+    </section>
+    <!-- footer section -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Your custom scripts -->
     <script>
-        AOS.init({
-            offset: 120, // Offset (in px) from the original trigger point
-            delay: 400, // Delay (in ms) before the animation starts
-            duration: 300, // Duration (in ms) of the animation
-            easing: 'ease', // Easing function
-            once: false, // Whether animation should happen only once - while scrolling down
-            mirror: false, // Whether elements should animate out while scrolling past them
-            anchorPlacement: 'top-bottom', // Defines which position of the element regarding to window should trigger the animation
-        });
-
-        // jQuery to handle the navbar collapse
-        $('#navbarSupportedContent').on('shown.bs.collapse', function() {
-            $('.content').show();
-        });
-        $('#navbarSupportedContent').on('hidden.bs.collapse', function() {
-            $('.content').hide();
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script>
-
-    <script>
-        // sweet alert
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
+      // Initialize any custom scripts here, like Owl Carousel
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 10,
+          responsiveClass: true,
+          responsive: {
+            0: {
+              items: 1,
+              nav: true
+            },
+            600: {
+              items: 3,
+              nav: false
+            },
+            1000: {
+              items: 5,
+              nav: true,
+              loop: false
             }
+          }
         });
-        @if (Session('success'))
-            Toast.fire({
-                icon: 'success',
-                title: "{{ session('success') }}"
-            });
-        @endif
-
-        // add active on nav-items
-        $(document).ready(function() {
-            const currentUrl = window.location.href;
-
-            $('.nav-item').each(function() {
-                const route = $(this).data('route');
-                if (currentUrl.startsWith(route)) {
-                    $(this).addClass('active');
-                }
-            });
-        });
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

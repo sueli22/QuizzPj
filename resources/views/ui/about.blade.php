@@ -1,47 +1,52 @@
 @extends('ui.master')
 @section('content')
 <style>
-    .text-small {
-    font-size: 12px;
-    font-style: italic;
-}
-
+      .red-shadow {
+        filter: drop-shadow(0 0 10px rgb(46, 77, 143)); /* Adjust the shadow color and size as needed */
+    }
 </style>
-    <div class="page-wrapper mt-0 ">
-        <div class="card  bg-dark  text-white">
-            <img class="w-100" src="{{ asset('ui-images/q1.jpg') }}" alt="Card image"
-                style="height: 640px; filter: blur(70px); object-fit: cover;">
-            <div class="card-img-overlay">
-                <div class="container mt-5">
-                    <div class="row" style="">
-                        <div class="col-12 col-md-12 text-center" >
-                            <h1 class="mt-2 " > <span style="color:rgb(125, 245, 245);text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);   font-family: 'Freckle Face', cursive; ">Online Quizz</span></h1>
 
-                        </div>
-                    </div>
-
-                <div class="d-flex mt-5 justify-content-center gap-5 p-5" style="   font-family: 'Freckle Face', cursive;">
-                    <div class="col-3 border rounded p-2">
-                        <img class="card-img-top rounded border" src="{{ asset('ui-images/t2.jpg') }}" alt="Card image cap" style="width: 230px;height:200px;">
-                        <p class="text-small mt-4">Question Types: Support for various question formats, including multiple-choice, true/false, short answer, and essay.</p>
-
-                    </div>
-                    <div class="col-3 border rounded p-2">
-                        <img class="card-img-top rounded border" src="{{ asset('ui-images/q2.jpg') }}" alt="Card image cap" style="width: 230px;height:200px;">
-                        <p class="text-small mt-4">Randomization: Randomize questions and answer options to minimize cheating.
-                            .</p>
-
-                    </div>
-                    <div class="col-3 border rounded p-2">
-                        <img class="card-img-top rounded border" src="{{ asset('ui-images/download.jpg') }}" alt="Card image cap" style="width: 230px;height:200px;">
-                        <p class="text-small mt-4">Feedback Mechanism: Provide detailed feedback and explanations for correct and incorrect answers.
-                        </p>
-
-                    </div>
-                </div>
-                </div>
-
+<div class="container mb-5 ">
+    <div class="row mt-5 ">
+        <div class="col-5 mt-5" >
+            <div >
+              <img src="{{asset('ui-images/t.jpg')}}" class="red-shadow rounded-circle" style="width: 450px">
             </div>
-        </div>
+          </div>
+        <div class="col-md-7 mt-5">
+            <div class="">
+              <div class="heading_container">
+                <h2 style="font-family: 'Bangers', cursive;" class="mb-3">
+                  WHO WE ARE?
+                </h2>
+              </div>
+              <ul  style="font-family: 'Bangers', cursive;color:rgb(14, 47, 48)" >
+                <li  class="mb-3"> ကျွန်ုပ်တို့သည် ဉာဏ်စမ်းပဟေဠိများကို ထိရောက်စွာ စီစဉ်ပေးရန်အတွက် ခိုင်မာသော ပလက်ဖောင်းတစ်ခု ပံ့ပိုးပေးနိုင်ရန် ရည်စူးပါသည်။
+                    ဉာဏ်စမ်းပဟေဋ္ဌိများကို ပံ့ပိုးပေးသည့် အသုံးပြုရလွယ်ကူသော User Inter faceကို ပေးဆောင်ပါသည်။
+                </li>
+                <li class="mb-3">
+                    လွယ်ကူချောမွေ့စေရန်နှင့် အသေးစိတ်ခွဲခြမ်းစိတ်ဖြာခြင်းနှင့် အစီရင်ခံခြင်းကိရိယာများမှတစ်ဆင့် စွမ်းဆောင်ရည်ဆိုင်ရာ ထိုးထွင်းသိမြင်မှုများကို ပေးဆောင်ရန် ဒီဇိုင်းထုတ်ထားပါသည်။
+                </li>
+                <li>
+                    ပဟေဠိစီမံခန့်ခွဲမှုကို ရိုးရှင်းစေပြီး သင်ယူမှုအတွေ့အကြုံများကို မြှင့်တင်ရာတွင် ကျွန်ုပ်တို့နှင့် ပူးပေါင်းပါ။
+
+                </li>
+                <li>
+                    သင်သည် စာသင်ခန်းတွင်း သင်ယူမှုကို မြှင့်တင်ရန် ကြိုးစားနေသော ဆရာတစ်ဦးဖြစ်စေ သို့မဟုတ် သင့်အသိပညာကို စမ်းသပ်ရန် စိတ်အားထက်သန်သော ကျောင်းသားဖြစ်စေ၊ ကျွန်ုပ်တို့၏စနစ်သည် သင့်ခရီးအတွက် အသုံးပြုရလွယ်ကူသော User Inter faceနှင့် ပြည့်စုံသောကိရိယာများကို ပေးဆောင်ပါသည်။
+
+                </li>
+              <div>
+                <a href="{{route('user.categories')}}" class="btn btn-primary mt-4">
+                  Choose Category
+                </a>
+              </div>
+            </div>
+          </div>
     </div>
+
+
+</div>
+
+
+
 @endsection

@@ -50,10 +50,7 @@
     }
 </style>
 <div class="page-wrapper mt-0">
-    <div class="card bg-dark text-white">
-        <img class="w-100" src="{{ asset('ui-images/bgg.jpg') }}" alt="Card image"
-        style="height:720px; filter: blur(60px); object-fit: cover;">
-        <div class="card-img-overlay">
+
             <!-- Page Content -->
             <div class="content container mt-5">
                 <!-- Page Header -->
@@ -123,8 +120,7 @@
                             {{ $scores->links() }}
                         </div>
                     </div>
-                </div>
-            </div>
+         
         </div>
     @endif
 @endsection

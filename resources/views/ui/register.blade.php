@@ -2,9 +2,7 @@
 @section('content')
 
 <div class="page-wrapper mt-0 ">
-    <div class="card  bg-dark  text-white">
-        <img class="w-100" src="{{asset('ui-images/q1.jpg')}}" alt="Card image" style="height: 640px; filter: blur(70px); object-fit: cover;">
-        <div class="card-img-overlay">
+
     <div class="row d-flex justify-content-center">
     <div class="col-md-4">
         <form action="{{route('register')}}" method="post"> @csrf
@@ -40,5 +38,5 @@
         </form>
     </div>
 </div>
-        </div></div>
+        
 @endsection
