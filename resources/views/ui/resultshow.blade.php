@@ -11,7 +11,7 @@
 <div class="container">
     <div class="mt-5">
         <div class="row justify-content-center  mb-5">
-            <div class="col-md-10">
+            <div class="col-md-10 mt-5">
                 <div class="border">
                     <div class="card-header">သင်ဖြေဆိုထားသော အမှတ်များ </div>
 

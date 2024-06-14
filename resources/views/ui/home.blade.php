@@ -12,7 +12,9 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="row">
+              <div class="row"  data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000">
                 <div class="col">
                   <div class="detail-box">
                     <div>
@@ -37,7 +39,7 @@
               </div>
             </div>
             <div class="carousel-item">
-              <div class="row">
+              <div class="row" >
                 <div class="col">
                   <div class="detail-box">
                     <div>

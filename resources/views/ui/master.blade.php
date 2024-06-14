@@ -33,11 +33,14 @@
   <!-- jQuery -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     body, html {
       height: auto;
       margin: 0;
-      background-color: #f0f8ff;
+      background-color:  #c1d9ec;
+
     }
 
     .header_section {
@@ -45,7 +48,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      background-color: #f0f8ff;/* Ensure the background is opaque */
+      background-color: #a2c4e0;/* Ensure the background is opaque */
     }
 
     .content {
@@ -61,6 +64,10 @@
     .custom-table td, .custom-table th {
       border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
       padding: 10px; /* Add padding for cell content */
+    }
+
+    .cartoon{
+        font-family: 'Bangers', cursive; color:rgb(14, 47, 48);font-weight: bold;
     }
   </style>
 </head>
@@ -144,7 +151,7 @@
     <!-- end info_section -->
 
     <!-- footer section -->
-    <section class="container-fluid footer_section p-5 mt-5">
+    <section class="container-fluid footer_section p-5 mt-5" style="background-color:  #7799b4">
       <p>
         &copy; 2024 All Rights Reserved By
         <a href="https://html.design/">Naing Win Ko</a>
@@ -155,6 +162,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Your custom scripts -->
     <script>
       // Initialize any custom scripts here, like Owl Carousel
@@ -181,5 +189,9 @@
         });
       });
     </script>
+
+<script>
+    AOS.init();
+  </script>
   </body>
 </html>

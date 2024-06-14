@@ -55,9 +55,9 @@
             <div class="content container mt-5">
                 <!-- Page Header -->
                 <div class="page-header">
-                    <div class="row align-items-center">
-                        <h3 class="page-title mb-3 fontwmz">Score Of Your Previous Test</h3>
-                        <div class="col-md-6"></div>
+                    <div class="row align-items-center ">
+                        <h3 class="page-title mb-3 fontwmz mt-5">Score Of Your Previous Test</h3>
+                        <div class="col-md-6 mt-5"></div>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                             {{ $scores->links() }}
                         </div>
                     </div>
-         
+
         </div>
     @endif
 @endsection

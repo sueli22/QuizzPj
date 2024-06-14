@@ -4,7 +4,7 @@
 
         <div class="row d-flex justify-content-center mt-5">
         <div class="col-md-3 mb-5">
-        <div class="border  pt-3 mt-3 rounded shadow">
+        <div class="border  pt-3 mt-5 rounded shadow">
 
             <ul class="list-group  list-group-flush p-3 text-center ">
                 <h5 class="text-center  mb-2" >Contact</h5>
