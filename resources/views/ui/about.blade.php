@@ -7,7 +7,7 @@
         }
     </style>
 
-<div class="row" style="height: 80px">
+<div class="row" style="height: 50px">
 
 </div>
 
@@ -18,7 +18,7 @@
                     <img src="{{ asset('ui-images/t.jpg') }}" class="red-shadow rounded-circle" style="width: 450px">
                 </div>
             </div>
-            <div class="col-md-7 mt-5 mb-5">
+            <div class="col-md-7 mt-5 mb-4">
                 <div class="">
                     <div class="heading_container">
                         <h2 style="font-family: 'Bangers', cursive;" class="mb-3">
