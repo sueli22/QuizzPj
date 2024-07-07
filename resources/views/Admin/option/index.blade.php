@@ -2,7 +2,7 @@
 @section('content')
     <div class="page-wrapper mt-0 ">
         <div class="card  bg-dark text-white">
-            <img class="w-100" src="{{ asset('ui-images/bgg.jpg') }}" alt="Card image"
+            <img class="w-100" src="{{ asset('assets/img/2.jpg')}}" alt="Card image"
             style="height:720px; filter: blur(60px); object-fit: cover;">
             <div class="card-img-overlay">
                 <!-- Page Content -->
@@ -11,12 +11,12 @@
                     <div class="page-header">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h3 class="page-title">Options</h3>
+                                <h3 class="page-title">ရွေးချယ်ရန် အဖြေများ</h3>
                             </div>
                         </div>
                     </div>
                     <a href="{{ route('add.option') }}" class="btn btn-sm wbtn text-white mb-3"><i
-                            class="fas fa-plus"></i>Add</a>
+                            class="fas fa-plus"></i>အသစ်ထည့်ရန်</a>
 
 
 
@@ -29,17 +29,20 @@
                         <table class="custom-table table-sm border-success table-hover small">
                             <thead class="border-success">
                                 <tr>
-                                    <th>No</th>
-                                    <th>Answer</th>
-                                    <th>Question</th>
-                                    <th>Points</th>
-                                    <th>Actions</th>
+                                    <th>စဉ်</th>
+                                    <th>အဖြေများ</th>
+                                    <th>မေးခွန်း</th>
+                                    <th>ပေးမှတ်</th>
+                                    <th>စီမံရန်</th>
                                 </tr>
                             </thead>
                             <tbody class="border-success">
+                                @php
+                                $offset = ($options->currentPage() - 1) * $options->perPage();
+                                @endphp
                                 @foreach ($options as $index => $o)
                                     <tr>
-                                        <td>{{ ++$index }}</td>
+                                        <td>{{ $offset + $loop->iteration }}</td>
                                         <td>{{ $o->answer }}</td>
                                         <td>{{ $o->question->name ?? 'N/A' }}</td>
                                         <td>{{ $o->points }}</td>

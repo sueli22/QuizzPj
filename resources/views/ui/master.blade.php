@@ -1,197 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Quizz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>NaingWinKO</title>
+  <!-- Favicons -->
+  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
+  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/aos/aos.css" rel="stylesheet')}}">
+  <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="{{asset('user/css/style.css')}}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{{asset('user/css/responsive.css')}}" rel="stylesheet" />
-  <link href="{{asset('user/css/bootstrap.css')}}" rel="stylesheet" />
-  <link href="{{asset('user/css/style.css.map')}}" rel="stylesheet" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- jQuery -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    body, html {
-      height: auto;
-      margin: 0;
-      background-color:  #c1d9ec;
-
-    }
-
-    .header_section {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background-color: #a2c4e0;/* Ensure the background is opaque */
-    }
-
-    .content {
-      margin-top: 100px; /* Adjust according to your navbar height */
-      min-height: 70vh;
-    }
-
-    .custom-table {
-      background-color: transparent;
-      width: 100%;
-    }
-
-    .custom-table td, .custom-table th {
-      border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
-      padding: 10px; /* Add padding for cell content */
-    }
-
-    .cartoon{
-        font-family: 'Bangers', cursive; color:rgb(14, 47, 48);font-weight: bold;
-    }
-  </style>
+<style>
+        .border-buttom {
+  border-bottom: 1px solid white;
+}
+</style>
 </head>
 
-<body>
-  <div class="hero_area">
-    <!-- header section starts -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3" style=" border-bottom: 2px solid #626f8b;">
-          <a class="navbar-brand" href="index.html">
-            <div><img src="{{asset('ui-images/q33.jpg')}}" style="width:80px;height:80px" alt="Brand Logo" class="rounded-circle"></div>
-            <div class="mt-3 ms-2">
-              <a class="navbar-brand fst-italic" href="{{url('/')}}" style="color:rgb(14, 47, 48)"><b>Quizz<sup>MS</sup></b></a>
-            </div>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+<body class="index-page">
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{route('home')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('about')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">About</a>
-                </li>
-                @if(Auth::check())
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('user.categories')}}" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">Category</a>
-                </li>
-                @else
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('login')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('register')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Register</a>
-                </li>
-                @endif
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('contact')}}" style="color:rgb(14, 47, 48); font-weight: bold;">Contact us</a>
-                </li>
-                @if(Auth::check())
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">
-                    {{Auth::user()->name}}
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ Auth::user()->role == 'admin' ? route('profile.admin') : route('home') }}">Profile</a>
-                    <a class="dropdown-item" href="{{route('history')}}">History</a>
-                    <div class="dropdown-divider"></div>
-                    <form method="POST" action="{{ route('logout') }}">
-                      @csrf
-                      <button type="submit" class="dropdown-item mt-2" onclick="return confirm('Are you sure?')">အကောင့်ထွက်ရန်</button>
-                    </form>
-                  </div>
-                </li>
-                @endif
-              </ul>
-              <div class="user_option">
-                <a href="">
-                  <img src="images/user.png" alt="">
-                </a>
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid  container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Quizz</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{{route('home')}}">ပင်မ စာမျက်နှာ<br></a></li>
+          <li><a href="#about">ရည်ရွယ်ချက်</a></li>
+          <li><a href="#learn">လေ့လာရန်</a></li>
+
+          @if (Auth::check())
+          <li><a href="{{route('user.posts')}}">Posts</a></li>
+
+          <a class="btn-getstarted" href="{{route('user.categories')}}">Get Started</a>
+
+          <li class="dropdown"><a href="#"><span> <span class="spanOne"><b>{{ Auth::user()->name }}</b></span></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+                <li><a class="dropdown-item" href="@if (auth()->user()->role == 'admin') {{route('profile.admin')}} @else {{route('profile')}} @endif">မိမိ့အကောင့်</a></li>
+
+              <li><a href="{{route('history')}}">ဖြေခဲ့သောအမှတ်များ</a></li>
+              <li class="p-3">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="dropdown-item " onclick="return confirm('Are you sure?')">အကောင့်ထွက်ရန်</button>
                 </form>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+            </li>
 
-    <div class="content">
-      @yield('content')
+
+            </ul>
+          </li>
+          @else
+          <li><a href="{{route('register')}}">အကောင့်သစ်ဖွင့်ရန်</a></li>
+          <li><a href="{{route('login')}}">အကောင့်သို့၀င်မည်</a></li>
+          @endif
+          <li><a href="#contact">ဆက်သွယ်ရန်</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+
+
+    <div class="content" style="min-height: 800px">
+        @yield('content')
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
+
+  <footer id="footer" class="footer">
+
+    <div class="copyright">
+      <div class="container text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Nwk</strong> <span></span></p>
+        <div class="credits">
+        </div>
+      </div>
     </div>
 
-    <!-- end info_section -->
+  </footer>
 
-    <!-- footer section -->
-    <section class="container-fluid footer_section p-5 mt-5" style="background-color:  #7799b4">
-      <p>
-        &copy; 2024 All Rights Reserved By
-        <a href="https://html.design/">Naing Win Ko</a>
-      </p>
-    </section>
-    <!-- footer section -->
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Your custom scripts -->
-    <script>
-      // Initialize any custom scripts here, like Owl Carousel
-      $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-          loop: true,
-          margin: 10,
-          responsiveClass: true,
-          responsive: {
-            0: {
-              items: 1,
-              nav: true
-            },
-            600: {
-              items: 3,
-              nav: false
-            },
-            1000: {
-              items: 5,
-              nav: true,
-              loop: false
-            }
-          }
-        });
-      });
-    </script>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+
+
+  <!-- Main JS File -->
+  <script src="{{asset('assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
+<!-- Your existing HTML content here -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
-    AOS.init();
-  </script>
-  </body>
-</html>
+    // Initialize AOS
+    AOS.init({
+        duration: 1200,
+        once: true
+    });
+
+    // SweetAlert toast
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+    });
+
+    // Display success message if session success exists
+    @if (Session('success'))
+        Toast.fire({
+            icon: 'success',
+            title: "{{ session('success') }}"
+        });
+    @endif
+
+    // Add active class to nav items based on current URL
+    $(document).ready(function () {
+        const currentUrl = window.location.href;
+
+        $('.nav-item').each(function () {
+            const route = $(this).data('route');
+            if (currentUrl.startsWith(route)) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

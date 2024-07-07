@@ -6,7 +6,7 @@
 <div class="">
     <div class="page-wrapper mt-0 ">
         <div class="card  bg-dark ">
-            <img class="w-100" src="{{ asset('ui-images/bgg.jpg') }}" alt="Card image" style="height: 640px; filter: blur(40px); object-fit: cover;">
+            <img class="w-100" src="{{ asset('assets/img/2.jpg')}}" alt="Card image" style="height: 640px; filter: blur(40px); object-fit: cover;">
             <div class="card-img-overlay">
                 <div class="row justify-content-center">
                     <div class="col-md-4 mb-5">

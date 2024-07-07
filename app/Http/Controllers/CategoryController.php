@@ -58,7 +58,8 @@ class CategoryController extends Controller
 
      public function seeQuestions($id){
         $category = Category::findOrFail($id);
-        $questions = $category->questions;
-        return view('Admin.category.seequestions',compact('category','questions'));
-     }
+        $questions = $category->questions()->paginate(10); // Change 10 to the number of items per page you want
+
+        return view('Admin.category.seequestions', compact('category', 'questions'));
+    }
 }

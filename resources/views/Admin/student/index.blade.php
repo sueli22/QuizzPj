@@ -3,8 +3,8 @@
 
     <div class="page-wrapper mt-0">
         <div class="card  bg-dark text-white">
-            <img class="w-100" src="{{ asset('ui-images/bgg.jpg') }}" alt="Card image"
-                style="height:720px; filter: blur(60px); object-fit: cover;">
+            <img class="w-100" src="{{ asset('assets/img/2.jpg')}}" alt="Card image"
+                style="height:720px; filter: blur(10px); object-fit: cover;">
             <div class="card-img-overlay">
                 <div class="container">
                     <div class="row mb-3">
@@ -12,10 +12,10 @@
                             <form
                                 class="d-none  d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                                 <div class="input-group">
-                                    <form action="">@csrf
+                                    <form action="{{ route('student.list') }}">@csrf
                                         <input type="text" name="search" class="form-control   border-success small "
                                             aria-label="Search" aria-describedby="basic-addon2"
-                                            value="">
+                                            value="{{ request('search') }}">
                                         <div class="input-group-append">
                                             <button class="btn wbtn" type="submit">
                                                 <i class="fas fa-search fa-sm text-white"></i>
@@ -35,7 +35,7 @@
 
                                     <div class="card-body text-center">
                                         <h5 class="text-sm text-white" style="font-size: 15px;">{{ $stu->name }}</h5>
-                                        <a href="" class="btn wbtn text-white border "
+                                        <a href="{{ route('student.details', $stu->id) }}" class="btn wbtn text-white border "
                                             style="padding: 5px 10px; font-size: 10px;">ကြည့်ရန်</a>
                                     </div>
                                 </div>

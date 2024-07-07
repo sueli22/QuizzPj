@@ -7,7 +7,7 @@
         }
     </style>
 
-<div class="row" style="height: 50px">
+<div class="row" style="height: 5px">
 
 </div>
 

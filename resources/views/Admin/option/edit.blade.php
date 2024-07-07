@@ -2,7 +2,7 @@
 @section('content')
     <div class="page-wrapper mt-0 ">
         <div class="card  bg-dark  text-white">
-            <img class="w-100" src="{{ asset('ui-images/bgg.jpg') }}" alt="Card image"
+            <img class="w-100"  src="{{ asset('assets/img/2.jpg')}}" alt="Card image"
                 style="height:720px; filter: blur(60px); object-fit: cover;">
             <div class="card-img-overlay">
                 <!-- Page Content -->

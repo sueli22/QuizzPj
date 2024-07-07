@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -13,6 +16,7 @@ class AuthController extends Controller
     }
 
     public function register(){
+
         return view('ui.register');
  }
  //userstore
@@ -62,4 +66,11 @@ class AuthController extends Controller
         return redirect()->route('home');
 
     }
+
+    public function mailList(){
+
+        $mails=Contact::with('user')->paginate(10);
+
+        return view('Admin.adminmail.mail',compact('mails'));
+}
 }
