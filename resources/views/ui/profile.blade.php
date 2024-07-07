@@ -37,7 +37,7 @@
                                 </button>
 
                                 <div>
-                                    <a href="{{route('home')}}" class="btn btn-sm text-white border">Back</a>
+                                    <a href="{{url()->previous()}}" class="btn btn-sm text-white border">Back</a>
                                 </div>
                             </li>
                         </ul>

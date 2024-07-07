@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-12 col-md-8 col-lg-10 mt-5">
                         <ul>
-                            <li>ရေးသားသူ - {{ $post->user->name }} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i
+                            <i class="fas fa-user"></i> &nbsp;&nbsp;ရေးသားသူ - {{ $post->user->name }} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i
                                         class="fas fa-clock"></i>  &nbsp;&nbsp;{{ $post->created_at->diffForHumans() }} <a href="{{route('user.posts')}}" class="btn btn-sm border text-white">Back</a></span></li>
                             <li><i class="bi bi-check2-all"></i> <span>{{ $post->description }}</span></li>
 
@@ -38,8 +38,8 @@
                                     <ul class="">
                                         @foreach ($comments as $comment)
 
-                                                <strong><img src="{{ asset('storage/profile-images/'.$comment->user->image) }}"  class="rounded-circle" style="width: 30px;height:30px"> <i class="fas fa-user"></i> &nbsp;&nbsp;{{ $comment->user->name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{{ $comment->created_at->diffForHumans() }}</span></strong>
-                                                <p>{{ $comment->comment }}</p>
+                                                <strong><img src="{{ asset('storage/profile-images/'.$comment->user->image) }}"  class="rounded-circle" style="width: 30px;height:30px">  &nbsp;&nbsp;{{ $comment->user->name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{{ $comment->created_at->diffForHumans() }}  </span></strong>
+                                                <p>{{ $comment->comment }} <a href="{{route('user.comment.delete',$comment->id)}}" class="text-decoration-none"> <i class="fas fa-trash" style="color: red"></i></a> </p>
 
                                                 <hr style="border-color: rgb(211, 207, 207);">
 

@@ -92,6 +92,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('comment/delete/{id}',[CommentController::class,'deleteComment'])->name('user.comment.delete');
 
     Route::get('/user/categories/', [UiController::class, 'userCategories'])->name('user.categories');
     Route::get('/user/test/{id}', [UiController::class, 'testStart'])->name('test.start');

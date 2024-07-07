@@ -39,6 +39,8 @@
                                     </div>
                                     <div class="card-footer border-0">
                                         <button type="submit" class="btn text-white border-bottom">Update</button>
+                                    
+                                        <a href="{{url()->previous()}}" class="btn text-white border-bottom">Back</a>
                                     </div>
                                 </form>
                             </div>
