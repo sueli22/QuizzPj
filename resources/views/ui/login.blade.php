@@ -1,12 +1,11 @@
 @extends('ui.master')
 
 @section('content')
-    <div class="card bg-dark text-white">
-        <img class="card-img" src="{{ asset('assets/img/2.jpg') }}" alt="Card image"
-            style="height: 640px; filter: blur(50px); object-fit: cover;">
-        <div class="card-img-overlay">
+
             <div class="row mt-5 d-flex justify-content-center">
-                <div class="col-md-4 border mt-5 p-3">
+
+                <div class="col-8 border mt-5 p-3">
+
                     <form action="{{ route('login') }}" method="post"> @csrf
 
                         <div class=" card-body mt-3 p-4  shadow">
@@ -43,6 +42,5 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                
         @endsection

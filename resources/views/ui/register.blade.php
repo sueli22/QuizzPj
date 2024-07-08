@@ -1,9 +1,7 @@
 @extends('ui.master')
 
 @section('content')
-<div class="card bg-dark text-white">
-    <img class="card-img" src="{{asset('assets/img/2.jpg')}}" alt="Card image"  style="height: 640px; filter: blur(10px); object-fit: cover;">
-    <div class="card-img-overlay">
+
         <div class="row mt-5 d-flex justify-content-center">
             <div class="col-md-4 border mt-5 p-3">
                 <form action="{{route('register')}}" method="post"> @csrf
@@ -39,8 +37,7 @@
                     </div>
                 </form>
             </div>
-    </div>
-  </div>
+   
 
 
 

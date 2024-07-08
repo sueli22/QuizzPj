@@ -1,8 +1,6 @@
 @extends('ui.master')
 @section('content')
-<div class="card bg-dark text-white">
-    <img class="w-100" src="{{ asset('assets/img/2.jpg') }}" alt="Card image" style="height: 640px; filter: blur(10px); object-fit: cover;">
-    <div class="card-img-overlay">
+
     <div class="container my-3 d-flex justify-content-center mt-5">
 
 
@@ -23,12 +21,12 @@
                                 @endif
                             </div>
 
-                            <li class="list-group-item bg-transparent  text-white"><b>Name :</b>&nbsp; {{$user->name}}</li>
-                            <li class="list-group-item bg-transparent text-white"><b>Email :</b>&nbsp; {{$user->email}}</li>
-                            <li class="list-group-item bg-transparent text-white"><b>Role :</b>&nbsp; {{$user->role}}</li>
-                            <li class="list-group-item bg-transparent text-white"><a href="{{route('user.update.password',$user->id)}}"><b>Change Password :</b>&nbsp;Click</a></li>
-                            <li class="list-group-item bg-transparent text-white">
-                                <button type="button" class="btn btn-sm wbtn border text-white fw-bold float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <li class="list-group-item bg-transparent  pcolor"><b>Name :</b>&nbsp; {{$user->name}}</li>
+                            <li class="list-group-item bg-transparent  pcolor"><b>Email :</b>&nbsp; {{$user->email}}</li>
+                            <li class="list-group-item bg-transparent  pcolor"><b>Role :</b>&nbsp; {{$user->role}}</li>
+                            <li class="list-group-item bg-transparent  pcolor"><a href="{{route('user.update.password',$user->id)}}" class=" pcolor"><b>Change Password :</b>&nbsp;Click</a></li>
+                            <li class="list-group-item bg-transparent  pcolor">
+                                <button type="button" class="btn btn-sm wbtn border  pcolor fw-bold float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     @if($user->image)
                                         Update
                                     @else
@@ -37,7 +35,7 @@
                                 </button>
 
                                 <div>
-                                    <a href="{{url()->previous()}}" class="btn btn-sm text-white border">Back</a>
+                                    <a href="{{url()->previous()}}" class="btn btn-sm pcolor border">Back</a>
                                 </div>
                             </li>
                         </ul>

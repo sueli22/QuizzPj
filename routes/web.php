@@ -16,6 +16,8 @@ use LDAP\Result;
 Route::get('/', function () {
     return view('ui.home');
 })->name('home');
+Route::get('/aim', [UiController::class, 'aim'])->name('aim');
+Route::get('/learn', [UiController::class, 'learn'])->name('learn');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginStore'])->name('login');
@@ -92,10 +94,14 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('comment/delete/{id}',[CommentController::class,'deleteComment'])->name('user.comment.delete');
+
+    Route::get('question/qty/{id}', [UiController::class, 'questionQty'])->name('user.question.qty');
+
+    Route::get('comment/delete/{id}', [CommentController::class, 'deleteComment'])->name('user.comment.delete');
 
     Route::get('/user/categories/', [UiController::class, 'userCategories'])->name('user.categories');
     Route::get('/user/test/{id}', [UiController::class, 'testStart'])->name('test.start');
+
     Route::post('test', [ResultController::class, 'store'])->name('client.test.store');
     Route::get('results/{result_id}', [ResultController::class, 'show'])->name('client.results.show');
     Route::get('history', [UiController::class, 'history'])->name('history');
@@ -114,5 +120,3 @@ Route::middleware('auth')->group(function () {
     Route::get('/download-quiz-results-doc/{id}', [ResultController::class, 'downloadQuizResultsDoc'])->name('download.word');
     Route::get('/download-quiz-results-csv/{id}', [ResultController::class, 'downloadQuizResultsCSV'])->name('download.csv');
 });
-
-

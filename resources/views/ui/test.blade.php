@@ -51,10 +51,6 @@
             overflow-y: auto;
         }
     </style>
-    <div class="card bg-dark text-white">
-        <img class="card-img" src="{{ asset('assets/img/2.jpg') }}" alt="Card image"
-            style="height: 640px; filter: blur(40px); object-fit: cover;">
-        <div class="card-img-overlay">
 
             <div class="container">
                 <div class="row justify-content-center mt-5">
@@ -118,8 +114,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
-                            </div>
+                               
                         </div>
                     </div>
                 </div>

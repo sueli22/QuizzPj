@@ -15,6 +15,17 @@ use Illuminate\Support\Facades\Auth;
 class UiController extends Controller
 {
 
+    public function questionQty($id){
+        $category=Category::find($id);
+        return view('ui.select.index',compact('category'));
+    }
+    public function learn(){
+        return view('ui.learn');
+
+    }
+    public function aim(){
+        return view('ui.aim');
+    }
     public function contact(){
         return view('ui.contact');
     }
@@ -51,6 +62,7 @@ class UiController extends Controller
 
     }
 
+   
 
 
  //toshow results user already answered

@@ -9,16 +9,18 @@
             font-size: 12px;
             /* Adjust font size */
             padding: 5px;
+
             /* Adjust padding */
         }
 
 
         .fontwmz {
             font-family: 'Freckle Face', cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(31, 29, 29, 0.5);
         }
 
         .table {
+
             font-size: 0.875rem;
             /* Smaller font size */
         }
@@ -77,11 +79,11 @@
             overflow: hidden;
 
         }
+        .tableborder{
+            color: green
+        }
     </style>
-    <div class="card bg-dark text-black">
-        <img class="card-img" src="{{ asset('assets/img/2.jpg') }}" alt="Card image"
-            style="height: 640px; filter: blur(90px); object-fit: cover;">
-        <div class="card-img-overlay">
+
             <div class="page-wrapper mt-0">
 
                 <!-- Page Content -->
@@ -89,7 +91,7 @@
                     <!-- Page Header -->
                     <div class="page-header">
                         <div class="row align-items-center ">
-                            <h3 class="text-white mb-3 fontwmz mt-5">ချစ်ခင်ရပါသော {{ Auth::user()->name }}
+                            <h3 class="pcolor mb-3 fontwmz mt-5">ချစ်ခင်ရပါသော {{ Auth::user()->name }}
                                 သင်ဖြေဆိုခဲ့ဖူးသော အမှတ်များမှာ</h3>
                             <div class="col-md-6 mt-5"></div>
                         </div>
@@ -98,8 +100,8 @@
                     @if ($scores->isEmpty())
                         <h2 class="text-white">No History You Have Answered</h2>
                     @else
-                        <table class="custom-table border-success table-hover" style="table-layout: fixed; width: 100%;">
-                            <thead class=" text-white border-buttom">
+                        <table class=" border-success table-hover" style="table-layout: fixed; width: 100%;">
+                            <thead class=" pcolor border-buttom">
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
@@ -112,7 +114,7 @@
                                     <th>Download</th>
                                 </tr>
                             </thead>
-                            <tbody class=" text-white border-buttom">
+                            <tbody class="pcolor border-buttom">
                                 @foreach ($scores as $index => $s)
                                     <tr>
                                         <td>{{ ++$index }}</td>
