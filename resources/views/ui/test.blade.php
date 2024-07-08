@@ -46,9 +46,16 @@
         }
 
         .scrollable {
-            max-height: 70vh;
+            max-height: 100vh;
             /* Adjust max height as needed */
             overflow-y: auto;
+        }
+        .pcolor{
+            color: rgb(5, 56, 90)
+    }
+    .button-color {
+           background-color:  rgb(4, 44, 71);
+           color: white
         }
     </style>
 
@@ -56,11 +63,11 @@
                 <div class="row justify-content-center mt-5">
                     <div class="col-md-11 card-body scrollable">
                         <div>
-                            <h1 style="font-family: 'Freckle Face', cursive;" class="card-header">Let Start Testing</h1>
+                            <h1 style="font-family: 'Freckle Face', cursive;" class="card-header pcolor">Let Start Testing</h1>
                             <div class="" style="font-family: 'Freckle Face', cursive;">
                                 <div>
 
-                                    <div class="card-body" style="font-family: 'Freckle Face', cursive;">
+                                    <div class="card-body pcolor" style="font-family: 'Freckle Face', cursive; ">
                                         <div id="timer" style="font-size: 24px; margin-bottom: 20px;">01:00</div>
                                         <!-- Countdown timer -->
                                         <div id="time-limit-message"
@@ -70,10 +77,10 @@
                                         <form id="test-form" method="POST" action="{{ route('client.test.store') }}">
                                             @csrf
                                             <div class="mb-1">
-                                                <div class="card-header">Your Choice Category - {{ $category->name }}</div>
-                                                <div class="card-body">
+                                                <div class="card-header pcolor">Your Choice Category - {{ $category->name }}</div>
+                                                <div class="card-body pcolor">
                                                     @foreach ($category->questions as $question)
-                                                        <div class="border @if (!$loop->last) mb-1 @endif">
+                                                        <div class="border @if (!$loop->last) mb-1 @endif  p-3 pcolor">
                                                             <div class="card-header">{{ $question->name }}</div>
                                                             <div class="card-body box">
                                                                 <input type="hidden" name="questions[{{ $question->id }}]"
@@ -107,14 +114,14 @@
                                             </div>
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-6">
-                                                    <button type="submit" class="btn btn-primary">
+                                                    <button type="submit" class="btn button-color">
                                                         Submit
                                                     </button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-                               
+
                         </div>
                     </div>
                 </div>

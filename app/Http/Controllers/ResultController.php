@@ -48,7 +48,7 @@ class ResultController extends Controller
 
     //ScoreListToAdminDashboard
     public function scoreList(){
-        $scores=Result::with(['user','category'])->paginate(5);
+        $scores=Result::with(['user','category'])->paginate(7);
 
         return view('Admin.score.index',compact('scores'));
     }

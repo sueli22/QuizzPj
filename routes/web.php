@@ -18,6 +18,7 @@ Route::get('/', function () {
 })->name('home');
 Route::get('/aim', [UiController::class, 'aim'])->name('aim');
 Route::get('/learn', [UiController::class, 'learn'])->name('learn');
+Route::get('/contact',[UiController::class,'contact'])->name('contact');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginStore'])->name('login');

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 class PostController extends Controller
 {
     public function postList(){
-      $posts=Post::with('user')->latest()->paginate(5);
+      $posts=Post::with('user')->latest()->paginate(10);
       return view('Admin.adminpost.index',compact('posts'));
 
     }

@@ -43,7 +43,7 @@
         }
 
        .wbtn{
-        background-color: rgb(7, 10, 12);
+        background-color: rgb(4, 38, 61);
         overflow: hidden;
        }
 
@@ -104,72 +104,89 @@
             <!-- Nav Item - Dashboard -->
 
 
-
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('admin.index')}}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>ပင်မစာမျက်နှာ</span>
+            <li class="nav-item {{ request()->routeIs('') ? 'active' : '' }}">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if (auth()->user()->image)
+                            <img class="img-profile rounded-circle object-fit-cover" style="height: 30px; width: 30px;" src="{{ asset('storage/profile-images/' . Auth::user()->image) }}" alt="Profile Image">
+                        @endif
+                        <span>{{ Auth::user()->name }}</span>
                     </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('student.list')}}">
-                        <i class="fa-solid fa-users-line"></i>
-                        <span>ကျောင်းသားများ</span>
-                    </a>
-                </li>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <!-- Dropdown menu links -->
+                        <a class="dropdown-item" href="{{route('profile.admin')}}">Profile</a>
+                        <a class="dropdown-item" href="{{route('edit.password.admin')}}">Password Update</a>
+                        <div class="dropdown-divider"></div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item {{ request()->routeIs('admin.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>ပင်မစာမျက်နှာ</span>
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories')}}">
-                        <i class="fas fa-users"></i>
-                        <span>မေးခွန်းကဏ္ဍ</span>
-                    </a>
-                </li>
+            <li class="nav-item {{ request()->routeIs('student.list') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('student.list') }}">
+                    <i class="fa-solid fa-users-line"></i>
+                    <span>ကျောင်းသားများ</span>
+                </a>
+            </li>
 
+            <li class="nav-item {{ request()->routeIs('categories') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('categories') }}">
+                    <i class="fas fa-users"></i>
+                    <span>မေးခွန်းကဏ္ဍ</span>
+                </a>
+            </li>
 
+            <li class="nav-item {{ request()->routeIs('questions') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('questions') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>မေးခွန်းများ</span>
+                </a>
+            </li>
 
+            <li class="nav-item {{ request()->routeIs('options') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('options') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>အဖြေများ</span>
+                </a>
+            </li>
 
-                <li class="nav-item }">
-                    <a class="nav-link" href="{{route('questions')}}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>မေးခွန်းများ</span>
-                    </a>
-                </li>
+            <li class="nav-item {{ request()->routeIs('scores.list') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('scores.list') }}">
+                    <i class="fa-regular fa-building"></i>
+                    <span>ရမှတ်များ</span>
+                </a>
+            </li>
 
-                <li class="nav-item }">
-                    <a class="nav-link" href="{{route('options')}}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>အဖြေများ</span>
-                    </a>
-                </li>
+            <li class="nav-item {{ request()->routeIs('admin.posts.list') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.posts.list') }}">
+                    <i class="fa-regular fa-building"></i>
+                    <span>Postများ</span>
+                </a>
+            </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('scores.list')}}">
-                        <i class="fa-regular fa-building"></i>
-                        <span>ရမှတ်များ</span>
-                    </a>
-                </li>
+            <li class="nav-item {{ request()->routeIs('admin.mail.list') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.mail.list') }}">
+                    <i class="fa-regular fa-building"></i>
+                    <span>Mailများ</span>
+                </a>
+            </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('admin.posts.list')}}">
-                        <i class="fa-regular fa-building"></i>
-                        <span>Postများ</span>
-                    </a>
-                </li>
-
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('admin.mail.list')}}">
-                        <i class="fa-regular fa-building"></i>
-                        <span>Mailများ</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('home')}}">
-                        <i class="fa-regular fa-building"></i>
-                        <span>New Feds</span>
-                    </a>
-                </li>
-
+            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fa-regular fa-building"></i>
+                    <span>New Feds</span>
+                </a>
+            </li>
 
 
 
@@ -194,87 +211,11 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light  topbar mb-1 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{Auth::user()->name}}</b></span>
-                                @if (auth()->user()->image)
-                                <img class="img-profile rounded-circle object-fit-cover"
-                                src="{{asset('storage/profile-images/'. Auth::user()->image)}}">
-                                @endif
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{route('profile.admin')}}">
-
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-900"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="{{route('edit.password.admin')}}">
-                                    <span style="color: red;">
-                                    <i class="fas fa-fw fa-cog mr-2"></i>
-                                </span>
-                                    Change Password
-                                </a>
-
-                                <div class="dropdown-divider"></div>
-                                <form action="{{route('logout')}}" method="POST"> @csrf
-                                    <button class="dropdown-item" data-toggle="modal" data-target="#logoutModal" onclick="return confirm('Are u sure to logout?')">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 " style="color: red;"></i>
-                                        Logout
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="">
+                <div style="">
 
                     @yield('content')
 

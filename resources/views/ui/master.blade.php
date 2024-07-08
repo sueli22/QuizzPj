@@ -36,7 +36,7 @@
 
     <style>
         .pcolor{
-        color: rgb(4, 44, 71)
+            color: rgb(13, 87, 136)
     }
         .border-buttom {
             border-bottom: 1px solid rgb(1, 26, 36);
@@ -125,7 +125,7 @@
                         <li><a href="{{ route('login') }}" style="color:  rgb(13, 87, 136);font-size:1rem"
                                 class="fw-bold">အကောင့်သို့၀င်မည်</a></li>
                     @endif
-                    <li><a href="#contact" style="color:  rgb(13, 87, 136);font-size:1rem"
+                    <li><a href="{{route('contact')}}" style="color:  rgb(13, 87, 136);font-size:1rem"
                             class="fw-bold">ဆက်သွယ်ရန်</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

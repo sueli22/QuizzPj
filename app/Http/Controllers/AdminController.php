@@ -113,7 +113,7 @@ public function studentDetails($id)
 }
 
 public function eachScore($id){
-   $scores=Result::where('user_id',$id)->paginate(8);
+   $scores=Result::where('user_id',$id)->paginate(10);
    return view('Admin.score.index',compact('scores'));
 }
 

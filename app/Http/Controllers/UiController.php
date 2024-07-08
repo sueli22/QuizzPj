@@ -62,14 +62,14 @@ class UiController extends Controller
 
     }
 
-   
+
 
 
  //toshow results user already answered
 
  public function history(){
     $id=Auth::user()->id;
-    $scores=Result::with(['user','category'])->where('user_id',$id)->paginate(5);
+    $scores=Result::with(['user','category'])->where('user_id',$id)->paginate(10);
 
 
     return view('ui.history',compact('scores'));

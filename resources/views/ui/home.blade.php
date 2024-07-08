@@ -70,38 +70,7 @@
 
         </div>
 
-    </section><!-- /Features Section -->
-    <!-- About Section -->
-    <section id="learn" class="learn section">
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-                <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('assets/img/learn.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 order-2 order-lg-1 content">
-                    <h3 class="mb-5">ကျွန်ုပ်တို့နှင့်အတူလေ့လာပါ</h3>
-                    <p class="fst-italic">
-                        သင်၏ဖတ်စာအုပ်များ၏ စာမျက်နှာများသည် သင်၏အလားအလာကို ကြီးမြတ်မှုအဖြစ်သို့ ပြောင်းလဲရန်
-                        အခွင့်အလမ်းတစ်ခုဖစ်ပါသည်
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check2-all"></i> <span>မေးခွန်းတိုင်းက သင့်ဉာဏ်ရည်ဉာဏ်သွေးကို
-                                ချဲ့ထွင်နိုင်စေမယ့် အခွင့်အရေးတစ်ခုပါ.</span></li>
-                        <li><i class="bi bi-check2-all"></i> <span>သင်၏ သင်ယူမှုသည် မနက်ဖြန်အတွက် ပိုမိုတောက်ပသောလမ်းကို
-                                လင်းစေမည်ဖြစ်သည်</span></li>
-
-                    </ul>
-                    <p>
-                        အောက်ပါလင့်များတွင် ဘာသာရပ်တစ်ခုချင်းစီ၏ ကျယ်ပြန့်သော Documentation များကို စုစည်းဖော်ပြပေးထားပါသည်
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </section><!-- /About Section -->
     <!-- Clients Section -->
     <section id="clients" class="clients section">
 
