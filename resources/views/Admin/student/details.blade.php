@@ -17,13 +17,11 @@
                             <ul class="list-group  list-group-flush p-3">
 
                                 <div class="mb-3 text-center">
-                                    @if ($student->image)
-                                        <img src="{{ asset('storage/images/' . $student->image) }}"
-                                            class="profileimg rounded"
-                                            style="width:100%; height:200px; object-fit:cover">
-                                    @else
-                                        <p class="text-white"><b>No photo available !</b></p>
-                                    @endif
+                                    @if($student->image)
+                                    <img src="{{ asset('storage/images/'.$student->image) }}" class="profileimg rounded-circle" style="width: 200px; height:200px; object-fit:cover">
+                                @else
+                                    <p class="text-white"><b>No photo available !</b></p>
+                                @endif
                                 </div>
 
                                 <li class="list-group-item bg-transparent  text-white"><b>Name :</b>&nbsp;
